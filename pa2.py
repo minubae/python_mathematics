@@ -10,6 +10,7 @@
 # the problems. (Improperly titled functions will not be called properly.) To write these functions,
 # it should be sufficient to understand the documents on Logic and on Tuples and Sets listed on the
 # course programming page.
+
 import math
 
 ###########################################################################
@@ -35,15 +36,10 @@ def or_function(P,Q):
 # returns the truth value of the statement “P implies Q.” (You can test your function using the
 # print_truth_table function given on the Logic page.)
 def implies(P,Q):
-    if (P == True and Q == True):
+    if(P and Q) or (not P and Q) or (not P and not Q):
         return True
-    elif (P == True and Q == False):
+    elif(P and not Q):
         return False
-    elif (P == False and Q == True):
-        return True
-    elif (P == False and Q == False):
-        return True
-    return False
 
 ###########################################################################
 # Problem 02:
@@ -52,7 +48,8 @@ def implies(P,Q):
 def iff(P,Q):
     if (P and Q) or (not P and not Q):
         return True
-    return False
+    elif (not P and Q) or (P and not Q):
+        return False
 
 ###########################################################################
 # Problem 03:
