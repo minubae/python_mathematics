@@ -38,6 +38,10 @@ def implies(P,Q):
 # Problem 02:
 # Write a function named iff(P,Q) that takes as input two boolean values P and Q and returns
 # the truth value of the statement “P iff Q.”
+def iff(P,Q):
+    if (P and Q) or (not P and not Q):
+        return True
+    return False
 
 ###########################################################################
 # Problem 03:
