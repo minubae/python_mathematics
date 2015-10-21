@@ -11,13 +11,27 @@
 # it should be sufficient to understand the documents on Logic and on Tuples and Sets listed on the
 # course programming page.
 
+def print_truth_table(truth_function):
+    print(" P    |  Q    |  ", truth_function.__name__,"(P,Q)", sep="")
+    for P in (True, False):
+        for Q in (True, False):
+            print(str(P).ljust(5), "|", str(Q).ljust(5), "|",str(truth_function(P,Q)).ljust(5))
+            
 ###########################################################################
 # Problem 01: 
 # Write a function named implies(P,Q) that takes as input two boolean values P and Q and
 # returns the truth value of the statement “P implies Q.” (You can test your function using the
 # print_truth_table function given on the Logic page.)
-
-
+def implies(P,Q):
+    if (P == True and Q == True):
+        return True
+    elif (P == True and Q == False):
+        return False
+    elif (P == False and Q == True):
+        return True
+    elif (P == False and Q == False):
+        return True
+    return False
 
 
 ###########################################################################
