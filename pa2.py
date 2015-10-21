@@ -1,7 +1,7 @@
 # Subject: Bridge to Advanced Mathematics (Math 308), the City College of New York, CUNY
 # Instructor: Prof. Hooper
 # Title: Programming Assignment 02 (included 'pa2.py' file)
-# Due Date: Oct/20/2015, Thursday
+# Due Date: Oct/22/2015, Thursday
 # Author: Minwoo Bae (mbae000@citymail.cuny.edu)
 
 # Problems:
@@ -10,7 +10,10 @@
 # the problems. (Improperly titled functions will not be called properly.) To write these functions,
 # it should be sufficient to understand the documents on Logic and on Tuples and Sets listed on the
 # course programming page.
+import math
 
+###########################################################################
+# Sample functions for the purpose of testing
 def print_truth_table(truth_function):
     print(" P    |  Q    |  ", truth_function.__name__,"(P,Q)", sep="")
     for P in (True, False):
@@ -42,7 +45,6 @@ def implies(P,Q):
         return True
     return False
 
-
 ###########################################################################
 # Problem 02:
 # Write a function named iff(P,Q) that takes as input two boolean values P and Q and returns
@@ -72,6 +74,10 @@ def logically_equivalent(tf1, tf2):
 # Write a function planar_distance(p,q) which takes as input two points in the plane and
 # returns the distance between them. Here a point in the plane should be interpreted as a 2-tuple
 # whose entries are both real numbers.
+def planar_distance(p,q):
+    x1,y1 = p
+    x2,y2 = q
+    return math.sqrt((x2-x1)**2 + (y2-y1)**2)
 
 ###########################################################################
 # Problem 05: 
@@ -80,11 +86,8 @@ def logically_equivalent(tf1, tf2):
 # Write a function called sumset(A,B) which takes as input two sets of numbers A and B and
 # returns their sumset.
 def sumset(A,B):
-    
-
-
-
-
-
-
-
+    temp_set = set()
+    for a in A:
+        for b in B:
+            temp_set.add(a+b)
+    return temp_set
