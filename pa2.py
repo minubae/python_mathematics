@@ -64,8 +64,7 @@ def logically_equivalent(tf1, tf2):
         for Q in (True, False):
             temp_tf1.append(tf1(P,Q))
             temp_tf2.append(tf2(P,Q))
-    return temp_tf1 == temp_tf2
-        
+    return temp_tf1 == temp_tf2       
 
 ###########################################################################
 # Problem 04:   
