@@ -58,13 +58,14 @@ def iff(P,Q):
 # functions are logically equivalent.” Your function should return True if and only if the two
 # functions tf1 and tf2 return the same output whenever they are passed the same input values.
 def logically_equivalent(tf1, tf2):
+    temp_tf1 = []
+    temp_tf2 = []
     for P in (True, False):
         for Q in (True, False):
-            if iff(tf1(P,Q), tf2(P,Q)):
-                return True
-            else:
-                return False
-    return False
+            temp_tf1.append(tf1(P,Q))
+            temp_tf2.append(tf2(P,Q))
+    return temp_tf1 == temp_tf2
+        
 
 ###########################################################################
 # Problem 04:   
