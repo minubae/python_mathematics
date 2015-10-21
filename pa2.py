@@ -16,6 +16,15 @@ def print_truth_table(truth_function):
     for P in (True, False):
         for Q in (True, False):
             print(str(P).ljust(5), "|", str(Q).ljust(5), "|",str(truth_function(P,Q)).ljust(5))
+
+def or_not(P,Q):
+    return (not P) or (not Q)
+
+def not_and(P,Q):
+    return not (P and Q)
+
+def or_function(P,Q):
+    return P or Q
             
 ###########################################################################
 # Problem 01: 
@@ -45,13 +54,18 @@ def iff(P,Q):
 
 ###########################################################################
 # Problem 03:
-# Say that a 2-input truth function is a function which takes as input two boolean values P and
-# Q and returns a boolean value.( Examples include xor above, as well as implies and iff from the
-# problems above.)
 # Write a function named logically_equivalent(tf1, tf2) that takes as input two 2-input
 # truth functions tf1 and tf2 and returns the boolean value of the statement ”The two truth
 # functions are logically equivalent.” Your function should return True if and only if the two
 # functions tf1 and tf2 return the same output whenever they are passed the same input values.
+def logically_equivalent(tf1, tf2):
+    for P in (True, False):
+        for Q in (True, False):
+            if iff(tf1(P,Q), tf2(P,Q)):
+                return True
+            else:
+                return False
+    return False
 
 ###########################################################################
 # Problem 04:   
@@ -65,3 +79,12 @@ def iff(P,Q):
 # {a + b : a ∈ A and b ∈ B}.
 # Write a function called sumset(A,B) which takes as input two sets of numbers A and B and
 # returns their sumset.
+def sumset(A,B):
+    
+
+
+
+
+
+
+
