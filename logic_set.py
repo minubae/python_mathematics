@@ -111,6 +111,32 @@ def is_square(pointSet):
     result = False
     return result
 
+## Example 11 (Fibonacci Numbers):
+# F(n) = F(n-1)+F(n-2), n>=3, F(0)=0, F(1)=1
+def fibonacci(n):
+    a, b = 0, 1
+    while b < n:
+        print(b, end=',')
+        a, b = b, a+b
+
+# Recursive Approach: takes lots of time to solve it
+def fibonacci_r(n):
+    fibo_temp = []
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci_r(n-1) + fibonacci_r(n-2)
+        
+
+
+
+
+
+
+
+
 
 
 
