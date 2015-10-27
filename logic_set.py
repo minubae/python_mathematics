@@ -113,6 +113,10 @@ def is_square(pointSet):
 
 ## Example 11 (Fibonacci Numbers):
 # F(n) = F(n-1)+F(n-2), n>=3, F(0)=0, F(1)=1
+
+# Iteration Approach: Very Fast
+# To calculate the nth Fibonacci number in only n steps,
+# we can also start with 0 and 1 and iteratively add up items n times:
 def fibonacci(n):
     a, b = 0, 1
     while b < n:
@@ -128,8 +132,13 @@ def fibonacci_r(n):
         return 1
     else:
         return fibonacci_r(n-1) + fibonacci_r(n-2)
-        
 
+# Memoization Approach:       
+def fibonacci_m(n):
+    memo = {0:0, 1:1}
+    if not n in memo:
+        memo[n] = fibonacci_m(n-1) + fibonacci_m(n-2)
+    return memo[n]
 
 
 
