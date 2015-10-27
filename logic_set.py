@@ -125,7 +125,6 @@ def fibonacci(n):
 
 # Recursive Approach: takes lots of time to solve it
 def fibonacci_r(n):
-    fibo_temp = []
     if n == 0:
         return 0
     elif n == 1:
