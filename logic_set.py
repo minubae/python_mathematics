@@ -9,6 +9,9 @@ numbers = list(range(1,11))
 square = lambda x: x**2
 square_list = list(map(square, numbers))
 
+# Exclusive (Logic)
+def xor(P,Q):
+    return (P or Q) and not (P and Q)
 
 ## Example 01: 
 # A divisor of an integer n, is an integer d so that d divides n, i.e., so that n/d ∈ ℤ. 
