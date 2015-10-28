@@ -19,13 +19,17 @@ def xor(P,Q):
 # Write a function whose name is divisors which takes as input an integer n and returns 
 # the set of positive divisors of n.
 def divisors(n):
-    d = 0
-    return d
+    divisor_set = set()
+    for d in range(n):
+        if d != 0 and n%d == 0:
+            divisor_set.add(d)
+    return divisor_set
 
 ## Example 02:
 # Using the previous problem, write an function named gcd2 which takes as input two positive integers a 
 # and b and returns their greatest common divisor. Instead of using Euclid's algorithm, use the previous 
-# part to compute the two sets of divisors of the numbers. Then intersect these sets and find the maximal element. 
+# part to compute the two sets of divisors of the numbers. Then intersect these sets and
+# find the maximal element. 
 # Note that in Python, you can write max(S) to find the maximal element of the set S. 
 # (Remark: This function is much more inefficient than Euclid's algorithm!)
 def gcd(a,b):
@@ -36,12 +40,31 @@ def gcd(a,b):
     return b
 
 def gcd2(a,b):
-    gcd = 0
-    return gcd
 
-def max(S):
-    max_element = 0
-    return max_element
+    gcd_set = set()
+    divisors_a = set()
+    divisors_b = set()
+    
+    for d in range(a):
+        if d !=0 and a%d == 0:
+            divisors_a.add(d)
+
+    for d in range(b):
+        if d !=0 and b%d == 0:
+            divisors_b.add(d)
+
+    print(divisors_a)
+    print(divisors_b)
+
+    # A & B, A.intersection(B) : Returns the intersection of A and B
+    gcd_set = divisors_a & divisors_b
+    #gcd_set = divisors_a.intersection(divisors_b)
+
+    print(max(gcd_set))
+    return gcd_set
+
+def max_test(S):
+    return max(S)
 
 ## Example 03:
 # Write a function named intersection which takes as input two sets A and B and returns 
