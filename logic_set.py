@@ -63,9 +63,10 @@ def gcd2(a,b):
     # A >= B, A.issuperset(B) : Returns the boolean value of the statement A contains B.
     # A == B, Tests of equality of sets returning a boolean value.
 
+    gcd_set = sorted(gcd_set)
+
     # return max(gcd_set)
     # max() does't work here. So I created max_number(s) function.
-    print(gcd_set)
     return max_number(gcd_set)
 
 def max_number(S):
