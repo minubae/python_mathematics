@@ -42,29 +42,27 @@ def gcd(a,b):
 def gcd2(a,b):
 
     gcd_set = set()
-    divisors_a = set()
-    divisors_b = set()
+    temp_a = set()
+    temp_b = set()
     
     for d in range(a):
         if d !=0 and a%d == 0:
-            divisors_a.add(d)
+            temp_a.add(d)
 
     for d in range(b):
         if d !=0 and b%d == 0:
-            divisors_b.add(d)
+            temp_b.add(d)
 
-    print(divisors_a)
-    print(divisors_b)
+    # A & B, A.intersection(B) : Returns the intersection of A and B.
+    gcd_set = temp_a & temp_b # gcd_set = temp_a.intersection(temp_b)
 
-    # A & B, A.intersection(B) : Returns the intersection of A and B
-    gcd_set = divisors_a & divisors_b
-    #gcd_set = divisors_a.intersection(divisors_b)
-
-    print(max(gcd_set))
+    # A | B, A.union(B) : Returns the union of A and B.
+    # A - B, A.difference(B) : Returns the set-theoretic difference A \ B.
+    # A <= B, A.issubset(B) : Returns the boolean value of the statement A is a subset of B.
+    # A >= B, A.issuperset(B) : Returns the boolean value of the statement A contains B.
+    # A == B, Tests of equality of sets returning a boolean value.
+    
     return gcd_set
-
-def max_test(S):
-    return max(S)
 
 ## Example 03:
 # Write a function named intersection which takes as input two sets A and B and returns 
