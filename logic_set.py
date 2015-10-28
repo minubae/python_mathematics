@@ -54,16 +54,27 @@ def gcd2(a,b):
             temp_b.add(d)
 
     # A & B, A.intersection(B) : Returns the intersection of A and B.
-    gcd_set = temp_a & temp_b # gcd_set = temp_a.intersection(temp_b)
+    # gcd_set = temp_a & temp_b
+    gcd_set = temp_a.intersection(temp_b)
 
     # A | B, A.union(B) : Returns the union of A and B.
     # A - B, A.difference(B) : Returns the set-theoretic difference A \ B.
     # A <= B, A.issubset(B) : Returns the boolean value of the statement A is a subset of B.
     # A >= B, A.issuperset(B) : Returns the boolean value of the statement A contains B.
     # A == B, Tests of equality of sets returning a boolean value.
-    
-    return gcd_set
 
+    # return max(gcd_set)
+    # max() does't work here. So I created max_number(s) function.
+    print(gcd_set)
+    return max_number(gcd_set)
+
+def max_number(S):
+    temp_max = 0
+    for e in S:
+        if e > temp_max:
+            temp_max = e
+    return temp_max
+    
 ## Example 03:
 # Write a function named intersection which takes as input two sets A and B and returns 
 # the intersection of A and B. Do not use the intersection methods defined by Python. 
