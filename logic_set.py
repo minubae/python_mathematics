@@ -54,8 +54,8 @@ def gcd2(a,b):
             temp_b.add(d)
 
     # A & B, A.intersection(B) : Returns the intersection of A and B.
-    # gcd_set = temp_a & temp_b
-    gcd_set = temp_a.intersection(temp_b)
+    gcd_set = temp_a & temp_b
+    #gcd_set = temp_a.intersection(temp_b)
 
     # A | B, A.union(B) : Returns the union of A and B.
     # A - B, A.difference(B) : Returns the set-theoretic difference A \ B.
@@ -64,17 +64,8 @@ def gcd2(a,b):
     # A == B, Tests of equality of sets returning a boolean value.
 
     gcd_set = sorted(gcd_set)
+    return max(gcd_set)
 
-    # return max(gcd_set)
-    # max() does't work here. So I created max_number(s) function.
-    return max_number(gcd_set)
-
-def max_number(S):
-    temp_max = 0
-    for e in S:
-        if e > temp_max:
-            temp_max = e
-    return temp_max
     
 ## Example 03:
 # Write a function named intersection which takes as input two sets A and B and returns 
@@ -90,9 +81,12 @@ def intersection(A, B):
 # Write your own function named max2 which takes as input a tuple t of numbers and 
 # returns the maximal element of t. Do not use the max function mentioned above, 
 # instead loop through the elements of t to find the maximal element.
-def max(t):
-    max_element = 0
-    return max_element
+def max2(S):
+    temp_max = 0
+    for e in S:
+        if e > temp_max:
+            temp_max = e
+    return temp_max
 
 ## Example 05:
 # Write a function set_of_squares(n) which takes as input a natural number n and returns the set
