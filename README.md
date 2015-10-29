@@ -1,4 +1,4 @@
-# Python Math 02
+# Mathematical Programming Examples in Python
 
 ## Example 01: 
 A divisor of an integer n, is an integer d so that d divides n, i.e., so that n/d ∈ ℤ. 
