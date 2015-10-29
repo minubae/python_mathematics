@@ -39,7 +39,7 @@ def gcd(a,b):
         (a,b) = (b%a,a)
     return b
 
-def gcd2(a,b):
+def minu_gcd(a,b):
 
     gcd_set = set()
     temp_a = set()
@@ -64,7 +64,7 @@ def gcd2(a,b):
     # A == B, Tests of equality of sets returning a boolean value.
 
     gcd_set = sorted(gcd_set)
-    return max(gcd_set)
+    return minu_max(gcd_set)
 
 ## Example 03:
 # Write a function named intersection which takes as input two sets A and B and returns 
@@ -72,7 +72,7 @@ def gcd2(a,b):
 # You should be able to do this with the set() function for constructing the empty set, 
 # one for loop for looping through elements of a set, the in statement for testing membership, 
 # and the add method for adding elments to a set.
-def intersection2(A, B):
+def minu_intersection(A, B):
     temp_set = set()
     for a in A:
         for b in B:
@@ -81,7 +81,7 @@ def intersection2(A, B):
     
     return sorted(temp_set)
 
-def union2(A, B):
+def minu_union(A, B):
     U = set()
     for a in A:
         U.add(a)
@@ -95,7 +95,7 @@ def union2(A, B):
 # Write your own function named max2 which takes as input a tuple t of numbers and 
 # returns the maximal element of t. Do not use the max function mentioned above, 
 # instead loop through the elements of t to find the maximal element.
-def max2(S):
+def minu_max(S):
     temp_max = 0
     for e in S:
         if e > temp_max:
@@ -107,7 +107,11 @@ def max2(S):
 # An = {k^2: k ∈ ℤ and 0 ≤ k ≤ n}.
 def set_of_squares(n):
     temp_set = set()
-    return temp_set
+    
+    for k in range(n+1):
+        temp_set.add(k**2)
+        
+    return sorted(temp_set)
 
 ## Example 06:
 # For sets of numbers A and B, let A⊕B denote their sumset as defined two problems above. 
