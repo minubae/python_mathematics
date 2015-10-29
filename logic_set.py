@@ -137,13 +137,51 @@ def set_calculation(n):
     A = set()
     return A
 
-## Example 07:
+## Example 07: (Important-Coding Quiz)
 # Lagrange's four-square theorem states that any non-negative integer is the sum of the squares of four integers. 
 # Write a function lagrange_four_square(n) which takes as input a non-negative integer n and returns
 # a quadruple (a,b,c,d) of integers 
 # so that n = a^2+b^2+c^2+d^2.
 def lagrange_four_square(n):
-    quadruple = set()
+    quadruple = list()
+    a, b, c, d = 0, 0, 0, 0
+    temp_n = 0
+    temp_quad = list()
+
+    for x in range(1, n):
+        if x**2 <= n:
+            temp_quad.append(x)
+
+    a = max(temp_quad)
+    quadruple.append(a)
+    temp_quad = []
+    
+    temp_n = n - a**2
+    for y in range(1, temp_n):
+        if y**2 <= temp_n:
+            temp_quad.append(y)
+
+    b = max(temp_quad)
+    quadruple.append(b)
+    temp_quad = []
+
+    temp_n = temp_n - b**2
+    for z in range(1, temp_n):
+        if z**2 <= temp_n:
+            temp_quad.append(z)
+    c = max(temp_quad)
+    quadruple.append(c)
+    temp_quad = []
+
+    temp_n = temp_n - c**2
+    for v in range(1, temp_n):
+        if v**2 <= temp_n:
+            print(v)
+            #temp_quad.append(v)
+    #d = max(temp_quad)
+    #quadruple.append(d)
+    temp_quad = []
+    
     return quadruple
 
 ## Example 08:
