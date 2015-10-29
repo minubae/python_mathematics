@@ -113,7 +113,19 @@ def set_of_squares(n):
         
     return sorted(temp_set)
 
-## Example 06:
+# Example 06-01: 
+# Suppose A and B are two sets of numbers. Their sumset is the set
+# {a + b : a ∈ A and b ∈ B}.
+# Write a function called sumset(A,B) which takes as input two sets of numbers A and B and
+# returns their sumset.
+def sumset(A,B):
+    temp_set = set()
+    for a in A:
+        for b in B:
+            temp_set.add(a+b)
+    return temp_set
+
+## Example 06-02:
 # For sets of numbers A and B, let A⊕B denote their sumset as defined two problems above. 
 # For n ∈ ℕ, let An be as in the previous problem. Use the functions defined in the two prior problems to 
 # compute (An ⊕ An) ⊕ (An ⊕ An) for small values of n. Let A∞ = {k^2: k ∈ ℤ}. Use the results of this calculation 
@@ -121,11 +133,14 @@ def set_of_squares(n):
 # (Remark. Sets in Python are sometimes printed out of order. If you have a set X and want to see it in order, 
 # you can first convert it to a list with L=list(X). Then you can sort it with L.sort(). 
 # Then printing L printes the members of X in order. Lists will be covered soon.)
-
+def set_calculation(n):
+    A = set()
+    return A
 
 ## Example 07:
 # Lagrange's four-square theorem states that any non-negative integer is the sum of the squares of four integers. 
-# Write a function lagrange_four_square(n) which takes as input a non-negative integer n and returns a quadruple (a,b,c,d) of integers 
+# Write a function lagrange_four_square(n) which takes as input a non-negative integer n and returns
+# a quadruple (a,b,c,d) of integers 
 # so that n = a^2+b^2+c^2+d^2.
 def lagrange_four_square(n):
     quadruple = set()
@@ -158,8 +173,7 @@ def is_square(pointSet):
 
 ## Example 11 (Fibonacci Numbers):
 # F(n) = F(n-1)+F(n-2), n>=3, F(0)=0, F(1)=1
-
-# Iteration Approach: Very Fast
+## Iteration Approach: Very Fast
 # To calculate the nth Fibonacci number in only n steps,
 # we can also start with 0 and 1 and iteratively add up items n times:
 def fibonacci(n):
@@ -168,7 +182,7 @@ def fibonacci(n):
         print(b, end=',')
         a, b = b, a+b
 
-# Recursive Approach: takes lots of time to solve it
+## Recursive Approach: takes lots of time to solve it
 def fibonacci_r(n):
     if n == 0:
         return 0
@@ -177,7 +191,7 @@ def fibonacci_r(n):
     else:
         return fibonacci_r(n-1) + fibonacci_r(n-2)
 
-# Memoization Approach:       
+## Memoization Approach:       
 def fibonacci_m(n):
     memo = {0:0, 1:1}
     if not n in memo:
