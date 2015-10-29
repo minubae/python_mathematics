@@ -2,7 +2,7 @@
 # Date: Oct/27/2015, Tuesday
 # Author: Minwoo Bae (minubae.nyc@gmail.com)
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Logic.html
-#            http://wphooper.com/teaching/2015-fall-308/python/Tuples_and_Sets.html
+#                    http://wphooper.com/teaching/2015-fall-308/python/Tuples_and_Sets.html
 import math
 
 # Lambda Example:
@@ -55,7 +55,7 @@ def gcd2(a,b):
 
     # A & B, A.intersection(B) : Returns the intersection of A and B.
     gcd_set = temp_a & temp_b
-    #gcd_set = temp_a.intersection(temp_b)
+    # gcd_set = temp_a.intersection(temp_b)
 
     # A | B, A.union(B) : Returns the union of A and B.
     # A - B, A.difference(B) : Returns the set-theoretic difference A \ B.
@@ -66,16 +66,30 @@ def gcd2(a,b):
     gcd_set = sorted(gcd_set)
     return max(gcd_set)
 
-    
 ## Example 03:
 # Write a function named intersection which takes as input two sets A and B and returns 
 # the intersection of A and B. Do not use the intersection methods defined by Python. 
 # You should be able to do this with the set() function for constructing the empty set, 
 # one for loop for looping through elements of a set, the in statement for testing membership, 
 # and the add method for adding elments to a set.
-def intersection(A, B):
-    tempSet = set()
-    return tempSet
+def intersection2(A, B):
+    temp_set = set()
+    for a in A:
+        for b in B:
+            if a == b:
+                temp_set.add(a)
+    
+    return sorted(temp_set)
+
+def union2(A, B):
+    U = set()
+    for a in A:
+        U.add(a)
+
+    for b in B:
+        U.add(b)
+
+    return sorted(U)
 
 ## Example 04:
 # Write your own function named max2 which takes as input a tuple t of numbers and 
@@ -90,7 +104,7 @@ def max2(S):
 
 ## Example 05:
 # Write a function set_of_squares(n) which takes as input a natural number n and returns the set
-# An={k^2: k ∈ ℤ and 0 ≤ k ≤ n}.
+# An = {k^2: k ∈ ℤ and 0 ≤ k ≤ n}.
 def set_of_squares(n):
     temp_set = set()
     return temp_set

@@ -96,14 +96,4 @@ def collatz(n):
                         n = 3*n+1
                 print(n)
 
-# Floor function: return the largest integer less than or equal to x
-# Example: x = 2.4, floor(x) = 2
-def floor(x):
-        return 1
-
-# Ceiling function: return the smallest integer greater than or equal to x
-# Example: x = 2.4, floor(x) = 3
-def ceiling(x):
-        return 1
-
 
