@@ -29,12 +29,14 @@ def factorial(n):
 		return 1
 
 	# Recursive solution: 
-	fact = factorial(n-1) * n
-	return fact
+	# fact = factorial(n-1) * n
+	# return fact
 
-	# while i <= n:
-	# 	fact = fact * i
-	# 	i += 1
+	while i <= n:
+		fact = fact*i
+		i += 1
+
+	return fact
 
 # print('Enter a positive integer n: ')
 # num2 = int(input())
