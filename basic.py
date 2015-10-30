@@ -91,11 +91,14 @@ def sum_of_cubes(n):
 # Collatz Conjecture
 # f(n) = n/2 if n%2==0, 3*n+1 if n%2==1
 def collatz(n):
+        temp = []
         while n != 1:
                 if n%2 == 0:
                         n = n // 2
                 elif n%2 == 1:
                         n = 3*n+1
-                print(n)
+                temp.append(n)
+
+        return temp
 
 
