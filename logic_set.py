@@ -145,17 +145,19 @@ def set_calculation(n):
 def lagrange_four_square(N):
     quadruple = dict()
     A = list(); B = list(); C = list(); D = list()
+
+    test= []
     for a in range(N):
         for b in range(N):
             for c in range(N):
                 for d in range(N):
 
-                    if a**2+b**2+c**2+d**2 == N:
-
-                        A.append(a)
-                        B.append(b)
-                        C.append(c)
-                        D.append(d)
+                    if a**2+b**2+c**2+d**2 == N: #tel = {'jack': 4098, 'sape': 4139}
+                        A.append(a); B.append(b)
+                        C.append(c); D.append(d)
+                        test = {'a':a, 'b':b, 'c':c, 'd':d}
+                        print(a,b,c,d)
+                        
     quadruple = dict([('a', A), ('b', B), ('c', C), ('d', D)])
     return quadruple
 
