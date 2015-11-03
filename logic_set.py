@@ -142,23 +142,26 @@ def set_calculation(n):
 # Write a function lagrange_four_square(n) which takes as input a non-negative integer n and returns
 # a quadruple (a,b,c,d) of integers 
 # so that n = a^2+b^2+c^2+d^2.
+
+# Naive brute force approach (Not efficient)
 def lagrange_four_square(N):
     quadruple = dict()
     A = list(); B = list(); C = list(); D = list()
-
-    test= []
     for a in range(N):
         for b in range(N):
             for c in range(N):
                 for d in range(N):
 
                     if a**2+b**2+c**2+d**2 == N: #tel = {'jack': 4098, 'sape': 4139}
-                        A.append(a); B.append(b)
-                        C.append(c); D.append(d)
-                        test = {'a':a, 'b':b, 'c':c, 'd':d}
-                        print(a,b,c,d)
-                        
-    quadruple = dict([('a', A), ('b', B), ('c', C), ('d', D)])
+##                        A.append(a); B.append(b)
+##                        C.append(c); D.append(d)
+##                        print(a,b,c,d)
+                        quadruple.update(dict([('a', a), ('b', b), ('c', c), ('d', d)]))
+    #quadruple = dict([('a', A), ('b', B), ('c', C), ('d', D)])
+    return quadruple
+
+def lagrange_four_square2(N):
+    quadruple = dict()
     return quadruple
 
 ## Example 08:
