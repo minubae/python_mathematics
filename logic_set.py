@@ -142,28 +142,16 @@ def set_calculation(n):
 # Write a function lagrange_four_square(n) which takes as input a non-negative integer n and returns
 # a quadruple (a,b,c,d) of integers 
 # so that n = a^2+b^2+c^2+d^2.
-
-# Naive brute force approach (Not efficient)
 def lagrange_four_square(N):
-    quadruple = dict()
-    A = list(); B = list(); C = list(); D = list()
-    for a in range(N):
-        for b in range(N):
-            for c in range(N):
-                for d in range(N):
-
-                    if a**2+b**2+c**2+d**2 == N: #tel = {'jack': 4098, 'sape': 4139}
-##                        A.append(a); B.append(b)
-##                        C.append(c); D.append(d)
-##                        print(a,b,c,d)
-                        quadruple.update(dict([('a', a), ('b', b), ('c', c), ('d', d)]))
-    #quadruple = dict([('a', A), ('b', B), ('c', C), ('d', D)])
-    return quadruple
-
-def lagrange_four_square2(N):
-    quadruple = dict()
-    return quadruple
-
+    tempN = N
+    for a in range(tempN,-1,-1):
+        for b in range(tempN, -1, -1):
+            for c in range(tempN, -1, -1):
+                for d in range(tempN, -1, -1):
+                    #tempN = tempN - (a**2+b**2+c**2+d**2)
+                    if a**2+b**2+c**2+d**2 == N:
+                        return a,b,c,d
+                    
 ## Example 08:
 # Suppose A, B and C are subsets of ℤ. Consider the quantified statement ⋆:∀a ∈ A ∃b ∈ B such that a−b ∈ C.
 # Write a function called verify_star which takes as input three sets of integers A, B and C and 
@@ -185,7 +173,7 @@ def is_nearly_equilateral(P,Q,R,epsilon):
 ## Example 10:
 # Write a function is_square which takes as input four points in the plane with integer coordinates and returns 
 # the truth-value of the statement "The four points are the vertices of a square."
-def is_square(pointSet):
+def is_square(pointSet): 
     result = False
     return result
 
