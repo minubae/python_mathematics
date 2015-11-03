@@ -1,10 +1,10 @@
 # Examples of Math Coding  in Python
 
-## Basic
+## 01. Basic
 
-## Logic
+## 02. Logic
 
-## Tuples and Sets
+## 03. Tuples and Sets
 
-## Lists
+## 04. Lists
 
