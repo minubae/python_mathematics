@@ -1,3 +1,8 @@
+# Title: Examples of Mathematics List in Python
+# Date: Nov/02/2015, Monday - 
+# Author: Minwoo Bae (minubae.nyc@gmail.com)
+# Reference: http://wphooper.com/teaching/2015-fall-308/python/Lists.html
+
 ## Example 01
 # The tribonacci sequence is a sequence of integers defined inductively by a0=a1=0, a2=1, and an+3=an+an+1+an+2 for integers n≥0. 
 # Write a function tribonacci(m) which takes as input an number m≥1 and returns the list [a0,a1,a2,…,ak] where ak is 
