@@ -190,12 +190,11 @@ def is_square(sqaure):
     def dist(p1,p2):
         x1, y1 = p1
         x2, y2 = p2
-        # return math.sqrt((x2-x1)**2+(y2-y1)**2)
-
+        
         # math.hypot(x, y):
         # Return the Euclidean norm, sqrt(x*x + y*y). This is the length of the vector from the origin to point (x, y)
-        
         return math.hypot(x2-x1, y2-y1)
+        # return math.sqrt((x2-x1)**2+(y2-y1)**2)
 
     def angle(p1,p2):
         x1, y1 = p1
