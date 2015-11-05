@@ -201,9 +201,6 @@ def is_square(sqaure):
         x1, y1 = p1
         x2, y2 = p2
         return math.atan2(y2-y1, x2-x1)
-
-    print(dist(a,b))
-    print(angle(a,d))
     
     if dist(a,b) == dist(a,c)==dist(b,d)==dist(c,d) and dist(a,m) == dist(b,m) == dist(c,m) == dist(d,m):
         return True
@@ -214,10 +211,7 @@ def center_coord(p1, p2, p3, p4):
         x1, y1 = p1; x2, y2 = p2
         x3, y3 = p3; x4, y4 = p4
 
-        midX = (x1+x2+x3+x4)/4
-        midY = (y1+y2+y3+y4)/4
-
-        coord = midX, midY
+        coord = (x1+x2+x3+x4)/4, (y1+y2+y3+y4)/4
 
         return coord
     
