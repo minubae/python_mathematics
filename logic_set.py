@@ -173,9 +173,13 @@ def is_nearly_equilateral(P,Q,R,epsilon):
 ## Example 10:
 # Write a function is_square which takes as input four points in the plane with integer coordinates and returns 
 # the truth-value of the statement "The four points are the vertices of a square."
-def is_square(pointSet): 
-    result = False
-    return result
+def is_square(sqaure):  #((0, 0), (0, 2), (2, 0), (2,2))
+    a,b,c,d=square
+    x1,y1 = a
+    x2,y2 = b
+    x3,y3 = c
+    x4,y4 = d
+    return a,b,c,d
 
 ## Example 11 (Fibonacci Numbers):
 # F(n) = F(n-1)+F(n-2), n>=3, F(0)=0, F(1)=1
