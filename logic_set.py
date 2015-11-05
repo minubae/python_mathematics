@@ -182,15 +182,28 @@ def is_nearly_equilateral(P,Q,R,epsilon):
 # - a rhombus with a right angle
 # - a rhombus with all angles equal
 # - a quadrilateral where the diagonals are equal and are the perpendicular bisectors of each other, i.e. a rhombus with equal diagonals
-def is_square(sqaure):  
+def is_square(sqaure):
+    
     a,b,c,d=square
-
+    m = center_coord(a,b,c,d)
+    
     def dist(p1,p2):
         x1, y1 = p1
         x2, y2 = p2
-        return math.sqrt((x2-x1)**2+(y2-y1)**2)
-    
-    m = center_coord(a,b,c,d)
+        # return math.sqrt((x2-x1)**2+(y2-y1)**2)
+
+        # math.hypot(x, y):
+        # Return the Euclidean norm, sqrt(x*x + y*y). This is the length of the vector from the origin to point (x, y)
+        
+        return math.hypot(x2-x1, y2-y1)
+
+    def angle(p1,p2):
+        x1, y1 = p1
+        x2, y2 = p2
+        return math.atan2(y2-y1, x2-x1)
+
+    print(dist(a,b))
+    print(angle(a,d))
     
     if dist(a,b) == dist(a,c)==dist(b,d)==dist(c,d) and dist(a,m) == dist(b,m) == dist(c,m) == dist(d,m):
         return True
