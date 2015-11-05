@@ -173,21 +173,41 @@ def is_nearly_equilateral(P,Q,R,epsilon):
 ## Example 10:
 # Write a function is_square which takes as input four points in the plane with integer coordinates and returns 
 # the truth-value of the statement "The four points are the vertices of a square."
-# INPUT: square = (0, 0), (0, 2), (2, 0), (2,2)
+# INPUT: square = (0, 0), (2, 0), (0, 2), (2,2) = a,b,c,d
 # OUTPUT: True
+# Properties of a Square:
+# - a rectangle with two adjacent equal sides
+# - a quadrilateral with four equal sides and four right angles
+# - a parallelogram with one right angle and two adjacent equal sides
+# - a rhombus with a right angle
+# - a rhombus with all angles equal
+# - a quadrilateral where the diagonals are equal and are the perpendicular bisectors of each other, i.e. a rhombus with equal diagonals
 def is_square(sqaure):  
     a,b,c,d=square
-    #x1,y1 = a; x2,y2 = b
-    #x3,y3 = c; x4,y4 = d
+
     def dist(p1,p2):
         x1, y1 = p1
         x2, y2 = p2
         return math.sqrt((x2-x1)**2+(y2-y1)**2)
     
-    if dist(a,b) == dist(a,c)==dist(b,d)==dist(c,d):
+    m = center_coord(a,b,c,d)
+    
+    if dist(a,b) == dist(a,c)==dist(b,d)==dist(c,d) and dist(a,m) == dist(b,m) == dist(c,m) == dist(d,m):
         return True
+    
     return False
 
+def center_coord(p1, p2, p3, p4):
+        x1, y1 = p1; x2, y2 = p2
+        x3, y3 = p3; x4, y4 = p4
+
+        midX = (x1+x2+x3+x4)/4
+        midY = (y1+y2+y3+y4)/4
+
+        coord = midX, midY
+
+        return coord
+    
 ## Example 11 (Fibonacci Numbers):
 # F(n) = F(n-1)+F(n-2), n>=3, F(0)=0, F(1)=1
 ## Iteration Approach: Very Fast
