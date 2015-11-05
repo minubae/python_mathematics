@@ -177,11 +177,8 @@ def is_nearly_equilateral(P,Q,R,epsilon):
 # OUTPUT: True
 def is_square(sqaure):  
     a,b,c,d=square
-    x1,y1 = a
-    x2,y2 = b
-    x3,y3 = c
-    x4,y4 = d
-
+    x1,y1 = a; x2,y2 = b
+    x3,y3 = c; x4,y4 = d
     if x1 == x2 and x3 == x4 and (x3-x1) == (y2-y1):
         return True
     return False
