@@ -46,4 +46,25 @@ def tribonacci(m):
         return 1
     return tribonacci(m-3) + tribonacci(m-2) + tribonacci(m-1)
 
+def tribonacci_01(m):
+    a, b, c = 0, 0, 1; temp=list()
+    temp.append(a); temp.append(b); temp.append(c)
+    while c < m:
+        a, b, c = b, c, a + b + c
+        temp.append(c)
+    return temp
+
+def tribonacci_02(n):
+    last = 1
+    secondLast = 1
+    thirdLast = 1
+    temp=list()
+    for i in range(2,n):
+        new = last + secondLast + thirdLast
+        thirdLast = secondLast
+        secondLast = last
+        last = new
+        temp.append(last)
+    return temp
+
 
