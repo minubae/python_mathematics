@@ -34,3 +34,12 @@ def multiply_polynomials(c1,c2):
 # For example, perimeter([(0,0),(3,0),(0,4)]) should return 12 (which is 3+4+5).
 def perimeter(p):
 	return 1
+
+## Problem 01:
+# The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1,
+# and a_{n+3} = a_{n} + a_{n+1} + a_{n+2} for integers n ≥ 0. Write a function tribonacci(m) which takes as input an number m ≥ 1
+# and returns the list [a0, a1, a2, . . . , a_{k}] where ak is the largest number in the sequence with a_{k} < m.
+def tribonacci(m):
+    return 1
+
+
