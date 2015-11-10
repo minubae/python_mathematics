@@ -36,10 +36,14 @@ def perimeter(p):
 	return 1
 
 ## Problem 01:
-# The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1,
-# and a_{n+3} = a_{n} + a_{n+1} + a_{n+2} for integers n ≥ 0. Write a function tribonacci(m) which takes as input an number m ≥ 1
+# The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1, and a_{n+3} = a_{n} + a_{n+1} + a_{n+2}
+# for integers n ≥ 0. (a_{n} = a_{n-3} + a_{n-2} + a_{n-1}) Write a function tribonacci(m) which takes as input an number m ≥ 1
 # and returns the list [a0, a1, a2, . . . , a_{k}] where ak is the largest number in the sequence with a_{k} < m.
 def tribonacci(m):
-    return 1
+    if m == 0 or m == 1:
+        return 0
+    elif m == 2:
+        return 1
+    return tribonacci(m-3) + tribonacci(m-2) + tribonacci(m-1)
 
 
