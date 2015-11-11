@@ -84,13 +84,51 @@ def tribonacci_02(n):
 # (The Catalan numbers show up in a lot of counting problems. Wikipedia has a nice article on the Catalan numbers.)
 def catalan_numbers(n):
     C = list()
-    r = 1
+    r = 0
+    if  n <= 1:
+        return 1
+    
     for i in range(n):
-        #C.append(1)
         r += catalan_numbers(i)*catalan_numbers(n-i-1)
-        print(r)
-    return 1
 
+        #print(r)
+        C.append(r)
+    return C
+
+def catalan_numbers2(n):
+    #catalan = [0 for i in range(n+1)]
+    catalan = [0] * (n+1)
+    res = 0
+    for x in range(2):
+            catalan[x] = 1
+    print(catalan)
+    
+    for i in range(2,n):
+        catalan[i] = 0
+        for j in range(i):
+            res = catalan[i] + (catalan[j] * catalan[i-j-1])
+            #print(catalan[i])
+    return res
+
+# OUTPUT:
+# first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ... 
+def catalan_numbers3(n):
+    
+    temp=list()
+    
+    def binominal_coefficient(n,k):
+        res = 1
+        if k > (n - k):
+            k = n - k
+        for i in range(k):
+            res *= (n - i)
+            res //= (i + 1)
+        return res
+    
+    for i in range (n+1):
+        c = binominal_coefficient(2*i, i)
+        temp.append(c // (i+1))
+    return temp
 
 
 
