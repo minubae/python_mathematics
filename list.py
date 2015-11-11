@@ -83,6 +83,12 @@ def tribonacci_02(n):
 # the summation formula above.
 # (The Catalan numbers show up in a lot of counting problems. Wikipedia has a nice article on the Catalan numbers.)
 def catalan_numbers(n):
+    C = list()
+    r = 1
+    for i in range(n):
+        #C.append(1)
+        r += catalan_numbers(i)*catalan_numbers(n-i-1)
+        print(r)
     return 1
 
 
