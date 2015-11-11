@@ -67,4 +67,30 @@ def tribonacci_02(n):
         temp.append(last)
     return temp
 
+## Problem 02:
+# Viewing addition as a binary operation, the Catalan number Ck is the number of ways to write k+1 as a sum of k+1 ones.
+# Here k≥0 is an integer. For example C0=1 because 1 can only be expressed as 1, and C1=1 because 2=1+1 is
+# the only way to write 2 as a sum of ones. But, C2=2 because 3=(1+1)+1=1+(1+1), and C3=5
+# because 4=1+(1+(1+1))=1+((1+1)+1)=(1+1)+(1+1)=((1+1)+1)+1=(1+(1+1))+1.
+# Suppose we have an expression for k+1 as a sum of ones. Then there is an outermost addition, and
+# we can simplify the left and right sides. For example, the sum (1+(1+1))+1 simplifies to 3+1.
+# Every sum representing k+1 simplifies to a sum of the form a+b with a≥1, b≥1 and a+b=k+1.
+# Furthermore in such a sum a and b are each represented as a sum of ones. It follows that for k≥1 we have
+# C_k=∑(i=0, k−1) Ci * C_(k−i−1).
+# (Here each term Ci * C_(k−i−1) represents number of ways to write k+1 as a sum of ones which simplifies to (i+1)+(k−i).)
+# Write a function catalan_numbers(n) which returns the list of the first n Catalan numbers:
+# [C0, C1, . . . , Cn−1]. Remark: All you really need to know about the Catalan numbers is that C0 = 1 and
+# the summation formula above.
+# (The Catalan numbers show up in a lot of counting problems. Wikipedia has a nice article on the Catalan numbers.)
+def catalan_numbers(n):
+    return 1
+
+
+
+
+
+
+
+
+
 
