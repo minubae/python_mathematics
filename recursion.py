@@ -54,12 +54,12 @@ def expansion(n,b):
 # Hints: m ∗ 0 = 0, m ∗ n = m ∗ (n − 1) + m and m ∗ n = m ∗ (n + 1) − m.
 # (Remark: Your function should work for all integers.)
 def multiply(m,n):
-    if m==0:
+    if n==0:
         return 0
-    elif m==1:
-        return n
+    elif n==1:
+        return m
     else:
-        return n + multiply(m-1, n)
+        return m + multiply(m, n-1)
 
 
 
