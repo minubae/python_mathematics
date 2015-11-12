@@ -67,6 +67,15 @@ def tribonacci_02(n):
         temp.append(last)
     return temp
 
+def fibonacci(n):
+    a, b = 0, 1
+    temp=list()
+    while b < n:
+        # print(b, end=',')
+        a, b = b, a+b
+        temp.append(b)
+    return temp
+        
 ## Problem 02:
 # Viewing addition as a binary operation, the Catalan number Ck is the number of ways to write k+1 as a sum of k+1 ones.
 # Here k≥0 is an integer. For example C0=1 because 1 can only be expressed as 1, and C1=1 because 2=1+1 is
@@ -94,12 +103,13 @@ def binominal_coefficient(n,k):
     return res
 
 def factorial(n):
+    i = 1
     fact = 1
     if n == 0 or n == 1:
         return 1
-    
-    for i in range(1,n+1):
+    while i <= n:
         fact = fact*i
+        i += 1
     return fact
 
 def catalan_numbers(n):
