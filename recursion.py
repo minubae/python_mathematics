@@ -5,7 +5,6 @@
 
 import math
 
-
 ## From Examples:
 def factorial(n):
     if n==0:
@@ -48,6 +47,19 @@ def expansion(n,b):
 # gcd(m,n)=gcd(n,m) for all m and n.
 # gcd(0,n)=n when n>0.
 # gcd(m,n)=gcd(n%m,m) whenever 0<m≤n.
+
+## Problem 03
+# Write a recursive function multiply(m,n) which takes as input two integers m and n, and
+# returns their product m ∗ n only using addition and subtraction.
+# Hints: m ∗ 0 = 0, m ∗ n = m ∗ (n − 1) + m and m ∗ n = m ∗ (n + 1) − m.
+# (Remark: Your function should work for all integers.)
+def multiply(m,n):
+    return multiply(m-1,n-1)*multiply(m-1,n)
+
+
+
+
+
 
 
 
