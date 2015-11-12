@@ -102,5 +102,3 @@ def iterate2(f,k,x):
 
 
 
-
-
