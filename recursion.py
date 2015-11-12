@@ -1,5 +1,5 @@
 # Title: Examples of Mathematics Logic and Set in Python
-# Date: Oct/27/2015, Tuesday
+# Date: Oct/27/2015, Tuesday - 
 # Author: Minwoo Bae (minubae.nyc@gmail.com)
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Recursion.html
 
@@ -60,6 +60,30 @@ def multiply(m,n):
         return m
     else:
         return m + multiply(m, n-1)
+
+## Problem 04
+# Suppose f:ℝ→ℝ. Then, we define f^{∘k} to be f applied k∈ℕ times:
+# f^{∘k}(x) = f∘f∘…∘f(x)_k for x∈ℝ. Write a recursive function iterate(f,k,x) which takes as
+# input a function f:ℝ→ℝ, a natural number k, and a floating point number x and
+# returns the value of f^{∘k}(x).
+def f(x):
+    return x**2
+
+def iterate(f, k, x):
+    res = x
+    temp=[]
+    for i in range(1,k+1):
+        res = f(res)
+        temp.append(res)
+    return temp
+
+
+
+
+
+
+
+
 
 
 
