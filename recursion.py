@@ -70,19 +70,20 @@ def f(x):
     return x**2
 
 def iterate(f, k, x):
-    res = x
-    temp=[]
-    for i in range(1,k+1):
-        res = f(res)
-        temp.append(res)
-    return temp
+    try:
+        res = x
+        for i in range(1,k+1):
+            res = f(res)
+        return res
+    except:
+        return 'The procedure was unsuccessful.'
 
 def iterate2(f,k,x):
     try:
         res = x
         for i in range(1,k+1):
             iterate2(f,i,res)
-            res = f(res)
+        res = f(res)
         return res
     except:
         return 'The procedure was unsuccessful.'
