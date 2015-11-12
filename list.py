@@ -82,56 +82,40 @@ def tribonacci_02(n):
 # [C0, C1, . . . , Cn−1]. Remark: All you really need to know about the Catalan numbers is that C0 = 1 and
 # the summation formula above.
 # (The Catalan numbers show up in a lot of counting problems. Wikipedia has a nice article on the Catalan numbers.)
-def catalan_numbers(n):
-    C = list()
-    r = 0
-    if  n <= 1:
-        return 1
-    
-    for i in range(n):
-        r += catalan_numbers(i)*catalan_numbers(n-i-1)
-        
-        print(r)
-        C.append(r)
-    return r
-
-def catalan_numbers2(n):
-    #catalan = [0 for i in range(n+1)]
-    catalan = [0] * (n+1)
-    res = 0
-    for x in range(2):
-            catalan[x] = 1
-    print(catalan)
-    
-    for i in range(2,n):
-        catalan[i] = 0
-        for j in range(i):
-            res = catalan[i] + (catalan[j] * catalan[i-j-1])
-            #print(catalan[i])
-    return res
-
 # OUTPUT:
 # first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ... 
-def catalan_numbers3(n):
+def binominal_coefficient(n,k):
+    res = 1
+    if k > (n - k):
+        k = n - k
+    for i in range(k):
+        res = res * (n - i)
+        res = res // (i + 1)
+    return res
+
+def factorial(n):
+    fact = 1
+    if n == 0 or n == 1:
+        return 1
     
+    for i in range(1,n+1):
+        fact = fact*i
+    return fact
+
+def catalan_numbers(n):
     temp=list()
-    
-    def binominal_coefficient(n,k):
-        res = 1
-        if k > (n - k):
-            k = n - k
-        for i in range(k):
-            res *= (n - i)
-            res //= (i + 1)
-        return res
-    
-    for i in range (1, n+1):
+    C = 0
+    for i in range(n):
+        C = factorial(2*i) // (factorial(i+1)*factorial(i))
+        temp.append(C)
+    return temp
+
+def catalan_numbers2(n):
+    temp=list()
+    for i in range (n):
         c = binominal_coefficient(2*i, i)
         temp.append(c // (i+1))
     return temp
-        
-
-
 
 
 
