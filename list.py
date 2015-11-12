@@ -90,10 +90,10 @@ def catalan_numbers(n):
     
     for i in range(n):
         r += catalan_numbers(i)*catalan_numbers(n-i-1)
-
-        #print(r)
+        
+        print(r)
         C.append(r)
-    return C
+    return r
 
 def catalan_numbers2(n):
     #catalan = [0 for i in range(n+1)]
@@ -125,11 +125,11 @@ def catalan_numbers3(n):
             res //= (i + 1)
         return res
     
-    for i in range (n+1):
+    for i in range (1, n+1):
         c = binominal_coefficient(2*i, i)
         temp.append(c // (i+1))
     return temp
-
+        
 
 
 
