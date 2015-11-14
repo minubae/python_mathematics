@@ -104,11 +104,13 @@ def cantors_set_contains(n, x):
     a, b = C0
 
     def f(a, b, x):
-        if x >= a and x <= b/3:
+        print('a:',a, 'b:',b)
+        # print('a:',a+(2/3), 'b:',b)
+        if x >= a and x <= 1/3:
             C = a, b/3
             return C
-        elif x >= 2/3+a and x <= b:
-            C = 2/3+a, b
+        elif x >= 2/3 and x <= 1:
+            C = 2/3+a, b/3
             return C
             
     if n == 0:
@@ -122,7 +124,7 @@ def cantors_set_contains(n, x):
         for i in range(1, n+1):
             a, b = f(a, b, x)
             print(a,b)
-                
+            
         if x >= a and x <= b:
             return True
         else:
