@@ -99,12 +99,38 @@ def iterate2(f,k,x):
 # (Can you see why these versions of C_i are correct?)
 # Hint: For testing, it may be useful to note that 1/4 ∈ C while 1/2*3^{k} ∉ C for any integer k ≥ 0.
 def cantors_set_contains(n, x):
-    if n > = 0:
+
+    C0 = 0, 1
+    a, b = C0
+
+    def f(a, b, x):
+        if x >= 0 and x <= 1/3:
+            C = a, b/3
+            return C
+        elif x >= 2/3 and x <= 1:
+            C = 2/3+a, b
+            return C
+            
+    if n == 0:        
+        length = b - a
+        if x >= a and x <= length:
+            return True
+        else:
+            return False
+    elif n >= 0:
+        
+        for i in range(1, n+1):
+            a, b = f(a, b, x)
+        print(a,b)
+        length = b - a
+        if x >= a and x <= length:
+            return True
+        else:
+            return False
         
     else:
         return 'n is not greater than equal to 0.'
     
-    return False
 
 
 
