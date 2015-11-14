@@ -82,8 +82,29 @@ def iterate2(f,k,x):
     temp = list()
     if k > 0:
         res = f(x)
-        iterate3(f,k-1,res)
-        print(res)
+        iterate2(f,k-1,res)
+
+# Problem 05: 
+# (Cantor set) The middle third Cantor set is defined by a limiting process. We define C_0 = [0,1] and will define C_i inductively 
+# for integers i ≥ 0. Each C_i is a finite union of closed intervals. For each integer i ≥ 0, we define C_i + 1 ⊂ C_i 
+# by removing the middle third of the intervals in Ci. So for example
+# C1 = [0,13] ∪ [23,1] and C2 = [0,1/9] ∪ [2/9,1/3] ∪ [2/3,7/9] ∪ [8/9,1].
+# The middle third Cantor set is defined by C= ⋂ {from i=0 to ∞} C_i.
+# Write a function cantors_set_contains(n,x) which takes as input an integer n ≥ 0 and returns the truth value of the statement x ∈ C_n.
+# You do not have to use recursion. But, if you want to use recursion, it might be helpful to use the function f:C_1→C_0 by
+# f(x) = 3x, if x ∈ [0,13] or 3x−2, if x ∈ [23,1].
+# Then you can define C_i by iteration:
+# Ci={x ∈ [0,1] : {x, f(x), f^{∘2)(x) , … , f{∘(i−1)}(x)} ⊂ C_1}.
+# An equivalent way to define C_i is C_i = {x : f{∘i(x)} is well defined}.
+# (Can you see why these versions of C_i are correct?)
+# Hint: For testing, it may be useful to note that 1/4 ∈ C while 1/2*3^{k} ∉ C for any integer k ≥ 0.
+def cantors_set_contains(n, x):
+    if n > = 0:
+        
+    else:
+        return 'n is not greater than equal to 0.'
+    
+    return False
 
 
 
