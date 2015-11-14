@@ -88,16 +88,52 @@ def iterate2(f,k,x):
 # (Cantor set) The middle third Cantor set is defined by a limiting process. We define C_0 = [0,1] and will define C_i inductively 
 # for integers i ≥ 0. Each C_i is a finite union of closed intervals. For each integer i ≥ 0, we define C_i + 1 ⊂ C_i 
 # by removing the middle third of the intervals in Ci. So for example
-# C1 = [0,13] ∪ [23,1] and C2 = [0,1/9] ∪ [2/9,1/3] ∪ [2/3,7/9] ∪ [8/9,1].
+# C1 = [0,1/3] ∪ [2/3,1] and C2 = [0,1/9] ∪ [2/9,1/3] ∪ [2/3,7/9] ∪ [8/9,1].
 # The middle third Cantor set is defined by C= ⋂ {from i=0 to ∞} C_i.
 # Write a function cantors_set_contains(n,x) which takes as input an integer n ≥ 0 and returns the truth value of the statement x ∈ C_n.
 # You do not have to use recursion. But, if you want to use recursion, it might be helpful to use the function f:C_1→C_0 by
-# f(x) = 3x, if x ∈ [0,13] or 3x−2, if x ∈ [23,1].
+# f(x) = 3x, if x ∈ [0,1/3] or 3x−2, if x ∈ [2/3,1].
 # Then you can define C_i by iteration:
 # Ci={x ∈ [0,1] : {x, f(x), f^{∘2)(x) , … , f{∘(i−1)}(x)} ⊂ C_1}.
 # An equivalent way to define C_i is C_i = {x : f{∘i(x)} is well defined}.
 # (Can you see why these versions of C_i are correct?)
 # Hint: For testing, it may be useful to note that 1/4 ∈ C while 1/2*3^{k} ∉ C for any integer k ≥ 0.
+
+def cantors_set_contains2(n, x):
+
+    def f(x):
+        if x >= 0 and x <= 1/3:
+            print('hi-1')
+            return 3*x
+        elif x >= 2/3 and x <= 1:
+            print('hi-2')
+            return 3*x - 2
+        else:
+            return x
+       
+    if n == 0:
+        if x >= 0 and x <= 1:
+            return True
+        else:
+            return False
+    elif n == 1:
+        if (x >= 0 and x <= 1/3) or (x >= 2/3 and x <= 1):
+            return True
+        else:
+            return False
+    elif n > 1:
+        res = x
+        for i in range(1,n+1):
+            res = f(res)
+            print(i, res)
+        if (res >= 0 and res <= 1/3) or (res >= 2/3 and res <= 1):
+            return True
+        else:
+            return False
+    else:
+        return 'n is not greater than equal to 0.'
+        
+        
 def cantors_set_contains(n, x):
 
     C0 = 0, 1
