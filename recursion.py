@@ -79,14 +79,11 @@ def iterate(f, k, x):
         return 'The procedure was unsuccessful.'
 
 def iterate2(f,k,x):
-    try:
-        res = x
-        for i in range(1,k+1):
-            iterate2(f,i,res)
-        res = f(res)
-        return res
-    except:
-        return 'The procedure was unsuccessful.'
+    temp = list()
+    if k > 0:
+        res = f(x)
+        iterate3(f,k-1,res)
+        print(res)
 
 
 
