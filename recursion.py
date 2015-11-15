@@ -98,8 +98,7 @@ def iterate2(f,k,x):
 # An equivalent way to define C_i is C_i = {x : f{∘i(x)} is well defined}.
 # (Can you see why these versions of C_i are correct?)
 # Hint: For testing, it may be useful to note that 1/4 ∈ C while 1/2*3^{k} ∉ C for any integer k ≥ 0.
-
-def cantors_set_contains2(n, x):
+def cantors_set_contains(n, x):
 
     def f(x):
         if x >= 0 and x <= 1/3:
@@ -131,38 +130,6 @@ def cantors_set_contains2(n, x):
         else:
             return False
     else:
-        return 'n is not greater than equal to 0.'
-        
-        
-def cantors_set_contains(n, x):
-
-    C0 = 0, 1
-    a, b = C0
-
-    def f(x):
-        a,b,c,d = 0, 1/3, 2/3, 1
-        if x >= a and x <= b:
-            return 3*x
-        elif x >= c and x <= d:
-            return 3*x - 2
-            
-    if n == 0:
-        if x >= a and x <= b:
-            return True
-        else:
-            return False
-        
-    elif n > 0 and x >=a and x <= b:
-        res = x
-        for i in range(1, n+1):
-            res = f(res)
-            print(res)
-            
-        if (res >= 0 and res <= 1/3) or (res >= 2/3 and res <= 1) :
-            return True
-        else:
-            return False
-    elif n < 0:
         return 'n is not greater than equal to 0.'
     
 
