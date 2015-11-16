@@ -39,6 +39,13 @@ def perimeter(p):
 # The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1, and a_{n+3} = a_{n} + a_{n+1} + a_{n+2}
 # for integers n ≥ 0. (a_{n} = a_{n-3} + a_{n-2} + a_{n-1}) Write a function tribonacci(m) which takes as input an number m ≥ 1
 # and returns the list [a0, a1, a2, . . . , a_{k}] where ak is the largest number in the sequence with a_{k} < m.
+# Example:
+# >>> tribonacci(100)
+# [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81]
+# >>> tribonacci(1)
+# [0, 0]
+# >>> tribonacci(81)
+# [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
 def tribonacci(m):
     if m == 0 or m == 1:
         return 0
@@ -46,7 +53,7 @@ def tribonacci(m):
         return 1
     return tribonacci(m-3) + tribonacci(m-2) + tribonacci(m-1)
 
-def tribonacci_01(m):
+def tribonacci2(m):
     a, b, c = 0, 0, 1; temp=list()
     temp.append(a); temp.append(b); temp.append(c)
     while c < m:
@@ -54,7 +61,7 @@ def tribonacci_01(m):
         temp.append(c)
     return temp
 
-def tribonacci_02(n):
+def tribonacci3(n):
     last = 1
     secondLast = 1
     thirdLast = 1
@@ -92,7 +99,10 @@ def fibonacci(n):
 # the summation formula above.
 # (The Catalan numbers show up in a lot of counting problems. Wikipedia has a nice article on the Catalan numbers.)
 # OUTPUT:
-# first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ... 
+# first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ...
+# Example:
+# >>> catalan_numbers(10)
+# [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
 def binominal_coefficient(n,k):
     res = 1
     if k > (n - k):
