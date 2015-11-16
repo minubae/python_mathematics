@@ -66,10 +66,11 @@ def multiply(m,n):
 # f^{∘k}(x) = f∘f∘…∘f(x)_k for x∈ℝ. Write a recursive function iterate(f,k,x) which takes as
 # input a function f:ℝ→ℝ, a natural number k, and a floating point number x and
 # returns the value of f^{∘k}(x).
-# >>> g = lambda x: x**2
-# >>> iterate(g,3,1.1) >>> 2.143588810000001
-# >>> h = lambda x: 2*x*(1-x)
-# >>> iterate(h,100,0.25) >>> 0.5
+# Example:
+# g = lambda x: x**2
+# iterate(g,3,1.1) >>> 2.143588810000001
+# h = lambda x: 2*x*(1-x)
+# iterate(h,100,0.25) >>> 0.5
 def f(x):
     return x**2
 
@@ -102,8 +103,9 @@ def iterate2(f,k,x):
 # An equivalent way to define C_i is C_i = {x : f{∘i(x)} is well defined}.
 # (Can you see why these versions of C_i are correct?)
 # Hint: For testing, it may be useful to note that 1/4 ∈ C while 1/2*3^{k} ∉ C for any integer k ≥ 0.
-# >>> cantors_set_contains(3, 5/6) -> False
-# >>> cantors_set_contains(10, 1/4) -> True
+# Example:
+# cantors_set_contains(3, 5/6) >>> False
+# cantors_set_contains(10, 1/4) >>> True
 def cantors_set_contains(n, x):
 
     def f(x):
