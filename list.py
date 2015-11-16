@@ -40,12 +40,9 @@ def perimeter(p):
 # for integers n ≥ 0. (a_{n} = a_{n-3} + a_{n-2} + a_{n-1}) Write a function tribonacci(m) which takes as input an number m ≥ 1
 # and returns the list [a0, a1, a2, . . . , a_{k}] where ak is the largest number in the sequence with a_{k} < m.
 # Example:
-# >>> tribonacci(100)
-# [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81]
-# >>> tribonacci(1)
-# [0, 0]
-# >>> tribonacci(81)
-# [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
+# tribonacci(100) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81]
+# tribonacci(1) >>> [0, 0]
+# tribonacci(81) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
 def tribonacci(m):
     if m == 0 or m == 1:
         return 0
@@ -104,8 +101,7 @@ def fibonacci(n):
 # OUTPUT:
 # first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ...
 # Example:
-# >>> catalan_numbers(10)
-# [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
+# catalan_numbers(10) >>> [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
 def binominal_coefficient(n,k):
     res = 1
     if k > (n - k):
