@@ -141,10 +141,14 @@ def cantors_set_contains(n, x):
         return 'n is not greater than equal to 0.'
     
 
+def recursive_test(n):
+    if n == 0:
+        return 1
+    return n*recursive_test(n-1)
 
-
-
-
+def testing(f, n):
+    for n in range(n):
+        print(n, "! = ", f(n), ".", sep="")
 
 
 
