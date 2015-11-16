@@ -56,9 +56,12 @@ def tribonacci(m):
 def tribonacci2(m):
     a, b, c = 0, 0, 1; temp=list()
     temp.append(a); temp.append(b); temp.append(c)
-    while c < m:
+    i = 1
+    while i <= m:
         a, b, c = b, c, a + b + c
-        temp.append(c)
+        if c < m:
+            temp.append(c)
+        i+=1
     return temp
 
 def tribonacci3(n):
