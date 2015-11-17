@@ -44,45 +44,23 @@ def perimeter(p):
 # tribonacci(1) >>> [0, 0]
 # tribonacci(81) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
 def tribonacci(m):
-    temp=[0]*3
-    temp[0] = 0; temp[1] = 0; temp[2] = 1
-    res = 0; n = 3
-    if m==1:
-        temp.remove(m)
-    else:
-        while res < m:
-            res = temp[n-3] + temp[n-2] +temp[n-1]
-            if res < m:
-                temp.append(res)
-            n += 1
-    return temp
-
-def tribonacci3(m):
-    # TODO:
-    # Need to be fixed. More works.
-    temp=[0]*3
     if m >= 1:
+        temp=[0]*3
         temp[0] = 0; temp[1] = 0; temp[2] = 1
-        n = 0
-        # print('len:',len(temp)-1)
-        t = len(temp)-1
-        print('temp: ',temp[t])
-        if temp[t] < m:
-            print('hi good')
-            while temp[t] < m:
-                res = temp[n] + temp[n+1] + temp[n+2]
+        res = 0; n = 3
+        if m==1:
+            temp.remove(m)
+            return temp
+        else:
+            while res < m:
+                res = temp[n-3] + temp[n-2] +temp[n-1]
                 if res < m:
                     temp.append(res)
-                    print('res:',res)
-                n+=1
-        else:
-            temp.remove(m)
-        return temp
+                n += 1
+            return temp
     else:
         return 'm is not greater than equal to 1'
     
-
-
 # r_tribonacci(10)
 def r_tribonacci(n):
     if n==0 or n==1:
