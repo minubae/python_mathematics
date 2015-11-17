@@ -140,18 +140,14 @@ def cantors_set_contains(n, x):
     else:
         return 'n is not greater than equal to 0.'
     
-
-def recursive_test(n):
-    if n == 0:
-        return 1
-    return n*recursive_test(n-1)
-
-def testing(f, n):
-    for n in range(n):
-        print(n, "! = ", f(n), ".", sep="")
-
-
-
+## Recursion Test:
+def call_me(n):
+    if n<=0:
+        print("Reached base case of n=", n)
+    else:
+        print("Function called with n=", n)
+        call_me(n-1)
+    #print("Exiting call of function with n=", n)
 
 
 
