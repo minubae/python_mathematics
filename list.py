@@ -47,16 +47,23 @@ def tribonacci(m):
     temp=[0]*3
     temp[0] = 0; temp[1] = 0; temp[2] = 1
     res = 0; n = 3
-    while res < m:
-        res = temp[n-3] + temp[n-2] +temp[n-1]
-        
-        if res < m:
-            temp.append(res)
-            
-        if m == 1:
-            temp.remove(m)
-        n += 1
+    if m==1:
+        temp.remove(m)
+    else:
+        while res < m:
+            res = temp[n-3] + temp[n-2] +temp[n-1]
+            if res < m:
+                temp.append(res)
+            n += 1
     return temp
+
+# r_tribonacci(10)
+def r_tribonacci(n):
+    if n==0 or n==1:
+        return 0
+    elif n==2:
+        return 1
+    return r_tribonacci(n-3) + r_tribonacci(n-2) + r_tribonacci(n-1)
 
 def tribonacci2(m):
     # TODO:
