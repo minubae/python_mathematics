@@ -4,13 +4,6 @@
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Recursion.html
 
 import math
-
-## From Examples:
-def factorial(n):
-    if n==0:
-        return 1
-    return n*factorial(n-1)
-
 ## Pascal's triangle:
 # Consider a polynomial p(t)=aktk+ak−1tk−1+…+a1t+a0. Observe that
 # (t+1)p(t)=aktk+1+(ak+ak−1)tk+(ak−1+ak−2)tk−1+…+(a0+a1)t+a0.
@@ -148,6 +141,30 @@ def call_me(n):
         print("Function called with n=", n)
         call_me(n-1)
     #print("Exiting call of function with n=", n)
+
+## From Examples:
+def factorial(n):
+    if n==0:
+        return 1
+    print('n:',n)
+    return n*factorial(n-1)
+
+def fibonacci(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    return fibonacci(n-2)+fibonacci(n-1)
+
+
+
+
+
+
+
+
+
+
 
 
 
