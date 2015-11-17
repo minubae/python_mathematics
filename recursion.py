@@ -51,8 +51,10 @@ def multiply(m,n):
         return 0
     elif n==1:
         return m
+    elif n < 0:
+        return  multiply(m, n+1) - m
     else:
-        return m + multiply(m, n-1)
+        return multiply(m, n-1) + m
 
 ## Problem 04
 # Suppose f:ℝ→ℝ. Then, we define f^{∘k} to be f applied k∈ℕ times:
@@ -64,10 +66,17 @@ def multiply(m,n):
 # iterate(g,3,1.1) >>> 2.143588810000001
 # h = lambda x: 2*x*(1-x)
 # iterate(h,100,0.25) >>> 0.5
-def f(x):
-    return x**2
-
-def iterate(f, k, x):
+g = lambda x: x**2
+h = lambda x: 2*x*(1-x)
+def iterate(f,k,x):
+    if k > 0:
+        if k==1:
+            return f(x)
+        return iterate(f,k-1,f(x))
+    else:
+        return 'k is not greater than 1'
+    
+def iterate2(f, k, x):
     try:
         res = x
         for i in range(1,k+1):
@@ -76,11 +85,7 @@ def iterate(f, k, x):
     except:
         return 'The procedure was unsuccessful.'
 
-def iterate2(f,k,x):
-    temp = list()
-    if k > 0:
-        res = f(x)
-        iterate2(f,k-1,res)
+
 
 # Problem 05: 
 # (Cantor set) The middle third Cantor set is defined by a limiting process. We define C_0 = [0,1] and will define C_i inductively 
