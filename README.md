@@ -9,5 +9,3 @@
 ### 4. Lists
 
 ### 4. Recursion
-
-### 5. Calculus
