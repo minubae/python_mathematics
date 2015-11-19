@@ -108,6 +108,35 @@ def cantors_set_contains(n, x):
 
     def f(x):
         if x >= 0 and x <= 1/3:
+            return 3*x
+        elif x >= 2/3 and x <= 1:
+            return 3*x - 2
+        else:
+            return x
+       
+    if n == 0:
+        if x >= 0 and x <= 1:
+            return True
+        else:
+            return False
+    elif n == 1:
+        if (x >= 0 and x <= 1/3) or (x >= 2/3 and x <= 1):
+            return True
+        else:
+            return False
+    elif n > 1:
+        cantors_set2(n-1, f(x))
+        if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
+            return True
+        else:
+            return False
+    else:
+        return 'n is not greater than equal to 0.'
+    
+def cantors_set_contains2(n, x):
+
+    def f(x):
+        if x >= 0 and x <= 1/3:
             print('hi-1')
             return 3*x
         elif x >= 2/3 and x <= 1:
@@ -132,37 +161,6 @@ def cantors_set_contains(n, x):
             res = f(res)
             print(i, res)
         if (res >= 0 and res <= 1/3) or (res >= 2/3 and res <= 1):
-            return True
-        else:
-            return False
-    else:
-        return 'n is not greater than equal to 0.'
-
-# cantors_set2(3, 5/6) >>> False
-# cantors_set2(10, 1/4) >>> True
-def cantors_set2(n, x):
-
-    def f(x):
-        if x >= 0 and x <= 1/3:
-            return 3*x
-        elif x >= 2/3 and x <= 1:
-            return 3*x - 2
-        else:
-            return x
-       
-    if n == 0:
-        if x >= 0 and x <= 1:
-            return True
-        else:
-            return False
-    elif n == 1:
-        if (x >= 0 and x <= 1/3) or (x >= 2/3 and x <= 1):
-            return True
-        else:
-            return False
-    elif n > 1:
-        cantors_set2(n-1, f(x))
-        if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
             return True
         else:
             return False
