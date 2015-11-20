@@ -43,23 +43,25 @@ def perimeter(p):
 # tribonacci(100) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81]
 # tribonacci(1) >>> [0, 0]
 # tribonacci(81) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
+# for i in range(100): print('[',i,']:', tribonacci(i))
 def tribonacci(m):
     if m >= 1:
         temp=[0]*3
         temp[0] = 0; temp[1] = 0; temp[2] = 1
         res = 0; n = 3; index = 0
-        if m==1:
-            index = len(temp)-1
-            if temp[index] >= m:
-                temp.remove(m)
-            return temp
-        else:
-            while res < m:
-                res = temp[n-3] + temp[n-2] +temp[n-1]
-                if res < m:
-                    temp.append(res)
-                n += 1
-            return temp
+        index = len(temp)-1
+        
+        while res < m:
+            res = temp[n-3] + temp[n-2] +temp[n-1]
+            print(res)
+            if res < m:
+                temp.append(res)
+
+            n += 1
+            
+        if temp[index] >= m:
+            temp.remove(temp[index])
+        return temp
     else:
         return 'm is not greater than equal to 1'
     
