@@ -47,9 +47,11 @@ def tribonacci(m):
     if m >= 1:
         temp=[0]*3
         temp[0] = 0; temp[1] = 0; temp[2] = 1
-        res = 0; n = 3
+        res = 0; n = 3; index = 0
         if m==1:
-            temp.remove(m)
+            index = len(temp)-1
+            if temp[index] >= m:
+                temp.remove(m)
             return temp
         else:
             while res < m:
