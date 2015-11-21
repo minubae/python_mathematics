@@ -247,21 +247,11 @@ def cantors_set_contains(n, x):
             return False
         
     elif n > 1:
-        if (x >= 0 and x <= 1/3) or (x >= 2/3 and x <= 1):
-            cantors_set_contains(n-1, f(x))
-        #print(n)
-        
-        print(f(x))
-        if f(x) != None:
+        cantors_set_contains(n-1, f(x))
+        if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
             return True
-        return False
-        #if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
-##        if f(x) >= 0 and f(x) <= 1:
-##            return True
-##        elif f(x) is None:
-##            return False
-##        else:
-##            return False
+        else:
+            return False
     else:
         return 'n is not greater than equal to 0.'
 
@@ -271,8 +261,7 @@ def cantors_set_contains2(n,x):
     try:
         if n==0 and (x >= 0 and x <= 1):
             return True
-
-        if n>=1:
+        elif n>=1 and (x >= 0 and x <= 1):
             i = 1
             Start = 0; End = 1
             pivot1 = 0; pivot2 = 0
@@ -285,18 +274,19 @@ def cantors_set_contains2(n,x):
 
                 print('Start:', Start)
                 print('pivot1:',pivot1)
+                print('x:', x)
                 print('pivot2:',pivot2)
                 print('End:', End)
                 print('')
                 
                 if Start<=x and x<=pivot1:
                     print('case1')
+                    print('')
                     End = pivot1
-                    pivot1=0; pivot2=0
                 elif pivot2<=x and x<=End:
                     print('case2')
+                    print('')
                     Start = pivot2
-                    pivot1=0; pivot2=0
                 else:
                     return False
                 i+=1
