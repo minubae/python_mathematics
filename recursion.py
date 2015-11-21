@@ -265,40 +265,54 @@ def cantors_set_contains(n, x):
     else:
         return 'n is not greater than equal to 0.'
 
+
+
 def cantors_set_contains2(n,x):
     try:
-        
+        if n==0 and (x >= 0 and x <= 1):
+            return True
+
+        if n>=1:
+            i = 1
+            Start = 0; End = 1
+            pivot1 = 0; pivot2 = 0
+            
+            while i <= n:
+                print('start')
+                interval = (End-Start)/3
+                pivot1 = Start+interval
+                pivot2 = Start+(2*interval)
+
+                print('Start:', Start)
+                print('pivot1:',pivot1)
+                print('pivot2:',pivot2)
+                print('End:', End)
+                print('')
+                
+                if Start<=x and x<=pivot1:
+                    print('case1')
+                    End = pivot1
+                    pivot1=0; pivot2=0
+                elif pivot2<=x and x<=End:
+                    print('case2')
+                    Start = pivot2
+                    pivot1=0; pivot2=0
+                else:
+                    return False
+                i+=1
+            
+            print('Start:', Start)
+            print('End:', End)
+            print('')
+            if Start <=x and x<=End:
+                return True
+            else:
+                return False
+            
+        else:
+            return False
     except Exception as error:
         return error
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     
 def cantors_set_contains3(n, x):
