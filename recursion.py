@@ -99,7 +99,7 @@ def tribonacci(m):
         return temp
     else:
         return 'm is not greater than equal to 1'
-
+        
 ## Problem 02:
 # Viewing addition as a binary operation, the Catalan number Ck is the number of ways to write k+1 as a sum of k+1 ones.
 # Here k≥0 is an integer. For example C0=1 because 1 can only be expressed as 1, and C1=1 because 2=1+1 is
@@ -119,6 +119,7 @@ def tribonacci(m):
 # first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ...
 # Examples:
 # catalan_numbers(10) >>> [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
+# for i in range(100): print('[',i,']:', catalan_numbers(i))
 def binominal_coefficient(n,k):
     res = 1
     if k > (n - k):
@@ -141,11 +142,14 @@ def factorial(n):
 def catalan_numbers(n):
     temp=list()
     C = 0
-    for i in range(n):
-        C = factorial(2*i) // (factorial(i+1)*factorial(i))
-        temp.append(C)
-    return temp
-
+    try:
+        for i in range(n):
+            C = factorial(2*i) // (factorial(i+1)*factorial(i))
+            temp.append(C)
+        return temp
+    except Exception as error:
+        return error
+    
 def catalan_numbers2(n):
     temp=list()
     for i in range (n):
@@ -159,15 +163,18 @@ def catalan_numbers2(n):
 # Hints: m ∗ 0 = 0, m ∗ n = m ∗ (n − 1) + m and m ∗ n = m ∗ (n + 1) − m.
 # (Remark: Your function should work for all integers.)
 def multiply(m,n):
-    if n==0:
-        return 0
-    elif n==1:
-        return m
-    elif n < 0:
-        return  multiply(m, n+1) - m
-    else:
-        return multiply(m, n-1) + m
-
+    try:
+        if n==0:
+            return 0
+        elif n==1:
+            return m
+        elif n < 0:
+            return  multiply(m, n+1) - m
+        else:
+            return multiply(m, n-1) + m
+    except Exception as error:
+        return error
+    
 ## Problem 04
 # Suppose f:ℝ→ℝ. Then, we define f^{∘k} to be f applied k∈ℕ times:
 # f^{∘k}(x) = f∘f∘…∘f(x)_k for x∈ℝ. Write a recursive function iterate(f,k,x) which takes as
@@ -178,15 +185,19 @@ def multiply(m,n):
 # iterate(g,3,1.1) >>> 2.143588810000001
 # h = lambda x: 2*x*(1-x)
 # iterate(h,100,0.25) >>> 0.5
+# for i in range(10): print('[',i,']:', iterate(g,i, 1.1))
 g = lambda x: x**2
 h = lambda x: 2*x*(1-x)
 def iterate(f,k,x):
-    if k > 0:
-        if k==1:
-            return f(x)
-        return iterate(f,k-1,f(x))
-    else:
-        return 'k is not greater than 1'
+    try:
+        if k > 0:
+            if k==1:
+                return f(x)
+            return iterate(f,k-1,f(x))
+        else:
+            return 'k is not greater than 1'
+    except Exception as error:
+        return error
     
 def iterate2(f, k, x):
     try:
@@ -214,7 +225,7 @@ def iterate2(f, k, x):
 # Example:
 # cantors_set_contains(3, 5/6) >>> False
 # cantors_set_contains(10, 1/4) >>> True
-import sys
+# for i in range(100): print('[',i,']:', cantors_set_contains2(i, 1/4))
 def cantors_set_contains(n, x):
 
     def f(x):
@@ -244,9 +255,6 @@ def cantors_set_contains(n, x):
         if f(x) != None:
             return True
         return False
-
-
-            
         #if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
 ##        if f(x) >= 0 and f(x) <= 1:
 ##            return True
@@ -256,8 +264,44 @@ def cantors_set_contains(n, x):
 ##            return False
     else:
         return 'n is not greater than equal to 0.'
-# for i in range(100): print('[',i,']:', cantors_set_contains2(i, 1/4))
-def cantors_set_contains2(n, x):
+
+def cantors_set_contains2(n,x):
+    try:
+        
+    except Exception as error:
+        return error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+def cantors_set_contains3(n, x):
 
     def f(x):
         if x >= 0 and x <= 1/3:
