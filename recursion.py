@@ -41,6 +41,118 @@ def expansion(n,b):
 # gcd(0,n)=n when n>0.
 # gcd(m,n)=gcd(n%m,m) whenever 0<m≤n.
 
+## Recursion Test:
+def call_me(n):
+    if n<=0:
+        print("Reached base case of n=", n)
+    else:
+        print("Function called with n=", n)
+        call_me(n-1)
+    #print("Exiting call of function with n=", n)
+
+## From Examples:
+def factorial(n):
+    if n==0:
+        return 1
+    print('n:',n)
+    return n*factorial(n-1)
+
+def fibonacci(n):
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    return fibonacci(n-2)+fibonacci(n-1)
+
+
+
+
+
+
+
+
+## Problem 01:
+# The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1, and a_{n+3} = a_{n} + a_{n+1} + a_{n+2}
+# for integers n ≥ 0. (a_{n} = a_{n-3} + a_{n-2} + a_{n-1}) Write a function tribonacci(m) which takes as input an number m ≥ 1
+# and returns the list [a0, a1, a2, . . . , a_{k}] where ak is the largest number in the sequence with a_{k} < m.
+# Examples:
+# tribonacci(100) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81]
+# tribonacci(1) >>> [0, 0]
+# tribonacci(81) >>> [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
+# for i in range(100): print('[',i,']:', tribonacci(i))
+def tribonacci(m):
+    if m >= 1:
+        temp=[0]*3
+        temp[0] = 0; temp[1] = 0; temp[2] = 1
+        res = 0; n = 3; index = 0
+        index = len(temp)-1
+        
+        while res < m:
+            res = temp[n-3] + temp[n-2] +temp[n-1]
+            
+            if res < m:
+                temp.append(res)
+            n += 1
+            
+        if temp[index] >= m:
+            temp.remove(temp[index])
+        return temp
+    else:
+        return 'm is not greater than equal to 1'
+
+## Problem 02:
+# Viewing addition as a binary operation, the Catalan number Ck is the number of ways to write k+1 as a sum of k+1 ones.
+# Here k≥0 is an integer. For example C0=1 because 1 can only be expressed as 1, and C1=1 because 2=1+1 is
+# the only way to write 2 as a sum of ones. But, C2=2 because 3=(1+1)+1=1+(1+1), and C3=5
+# because 4=1+(1+(1+1))=1+((1+1)+1)=(1+1)+(1+1)=((1+1)+1)+1=(1+(1+1))+1.
+# Suppose we have an expression for k+1 as a sum of ones. Then there is an outermost addition, and
+# we can simplify the left and right sides. For example, the sum (1+(1+1))+1 simplifies to 3+1.
+# Every sum representing k+1 simplifies to a sum of the form a+b with a≥1, b≥1 and a+b=k+1.
+# Furthermore in such a sum a and b are each represented as a sum of ones. It follows that for k≥1 we have
+# C_k=∑(i=0, k−1) Ci * C_(k−i−1).
+# (Here each term Ci * C_(k−i−1) represents number of ways to write k+1 as a sum of ones which simplifies to (i+1)+(k−i).)
+# Write a function catalan_numbers(n) which returns the list of the first n Catalan numbers:
+# [C0, C1, . . . , Cn−1]. Remark: All you really need to know about the Catalan numbers is that C0 = 1 and
+# the summation formula above.
+# (The Catalan numbers show up in a lot of counting problems. Wikipedia has a nice article on the Catalan numbers.)
+# OUTPUT:
+# first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ...
+# Examples:
+# catalan_numbers(10) >>> [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
+def binominal_coefficient(n,k):
+    res = 1
+    if k > (n - k):
+        k = n - k
+    for i in range(k):
+        res = res * (n - i)
+        res = res // (i + 1)
+    return res
+
+def factorial(n):
+    i = 1
+    fact = 1
+    if n == 0 or n == 1:
+        return 1
+    while i <= n:
+        fact = fact*i
+        i += 1
+    return fact
+
+def catalan_numbers(n):
+    temp=list()
+    C = 0
+    for i in range(n):
+        C = factorial(2*i) // (factorial(i+1)*factorial(i))
+        temp.append(C)
+    return temp
+
+def catalan_numbers2(n):
+    temp=list()
+    for i in range (n):
+        c = binominal_coefficient(2*i, i)
+        temp.append(c // (i+1))
+    return temp
+
 ## Problem 03
 # Write a recursive function multiply(m,n) which takes as input two integers m and n, and
 # returns their product m ∗ n only using addition and subtraction.
@@ -85,8 +197,6 @@ def iterate2(f, k, x):
     except:
         return 'The procedure was unsuccessful.'
 
-
-
 # Problem 05: 
 # (Cantor set) The middle third Cantor set is defined by a limiting process. We define C_0 = [0,1] and will define C_i inductively 
 # for integers i ≥ 0. Each C_i is a finite union of closed intervals. For each integer i ≥ 0, we define C_i + 1 ⊂ C_i 
@@ -104,6 +214,7 @@ def iterate2(f, k, x):
 # Example:
 # cantors_set_contains(3, 5/6) >>> False
 # cantors_set_contains(10, 1/4) >>> True
+import sys
 def cantors_set_contains(n, x):
 
     def f(x):
@@ -111,24 +222,38 @@ def cantors_set_contains(n, x):
             return 3*x
         elif x >= 2/3 and x <= 1:
             return 3*x - 2
-        else:
-            return x
+
     if n == 0:
         if x >= 0 and x <= 1:
             return True
         else:
             return False
+        
     elif n == 1:
         if (x >= 0 and x <= 1/3) or (x >= 2/3 and x <= 1):
             return True
         else:
             return False
+        
     elif n > 1:
-        cantors_set_contains(n-1, f(x))
-        if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
+        if (x >= 0 and x <= 1/3) or (x >= 2/3 and x <= 1):
+            cantors_set_contains(n-1, f(x))
+        #print(n)
+        
+        print(f(x))
+        if f(x) != None:
             return True
-        else:
-            return False
+        return False
+
+
+            
+        #if (f(x) >= 0 and f(x) <= 1/3) or (f(x) >= 2/3 and f(x) <= 1):
+##        if f(x) >= 0 and f(x) <= 1:
+##            return True
+##        elif f(x) is None:
+##            return False
+##        else:
+##            return False
     else:
         return 'n is not greater than equal to 0.'
 # for i in range(100): print('[',i,']:', cantors_set_contains2(i, 1/4))
@@ -162,35 +287,6 @@ def cantors_set_contains2(n, x):
             return False
     else:
         return 'n is not greater than equal to 0.'
-    
-## Recursion Test:
-def call_me(n):
-    if n<=0:
-        print("Reached base case of n=", n)
-    else:
-        print("Function called with n=", n)
-        call_me(n-1)
-    #print("Exiting call of function with n=", n)
-
-## From Examples:
-def factorial(n):
-    if n==0:
-        return 1
-    print('n:',n)
-    return n*factorial(n-1)
-
-def fibonacci(n):
-    if n==0:
-        return 0
-    elif n==1:
-        return 1
-    return fibonacci(n-2)+fibonacci(n-1)
-
-
-
-
-
-
 
 
 
