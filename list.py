@@ -53,10 +53,9 @@ def tribonacci(m):
         
         while res < m:
             res = temp[n-3] + temp[n-2] +temp[n-1]
-            print(res)
+            
             if res < m:
                 temp.append(res)
-
             n += 1
             
         if temp[index] >= m:
