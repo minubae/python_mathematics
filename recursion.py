@@ -51,6 +51,7 @@ def gcd(m,n):
         return gcd(m%n,n)
     return gcd(n%m, m)
 
+## Recursive Fibonacci function:
 def fibonacci(n):
     if n == 0:
         return 0
@@ -74,15 +75,6 @@ def factorial(n):
         return 1
     print('n:',n)
     return n*factorial(n-1)
-
-## Recursive Fibonacci function:
-def fibonacci(n):
-    if n==0:
-        return 0
-    elif n==1:
-        return 1
-    return fibonacci(n-2)+fibonacci(n-1)
-
 
 ## Problem 01:
 # The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1, and a_{n+3} = a_{n} + a_{n+1} + a_{n+2}
