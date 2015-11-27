@@ -44,8 +44,12 @@ def catalan(n):
 # gcd(m,n)=gcd(n,m) for all m and n.
 # gcd(0,n)=n when n>0.
 # gcd(m,n)=gcd(n%m,m) whenever 0<m≤n.
-
-
+def gcd(m,n):
+    if m==0:
+        return n
+    elif m>n:
+        return gcd(m%n,n)
+    return gcd(n%m, m)
 
 
 ## Recursion Test:
