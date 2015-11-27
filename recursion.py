@@ -36,7 +36,7 @@ def expansion(n,b):
 def catalan(n):
     if n == 0:
         return 1
-    return catalan(n+1)*(2*(2*n+1)/(n+2))
+    return catalan(n-1)*(2*(2*n+1)/(n+2))
     
 ## Example 02
 # (Greatest common divisor) Write a recursive function gcd(m,n) which returns the greatest common divisor of 
@@ -44,6 +44,9 @@ def catalan(n):
 # gcd(m,n)=gcd(n,m) for all m and n.
 # gcd(0,n)=n when n>0.
 # gcd(m,n)=gcd(n%m,m) whenever 0<m≤n.
+
+
+
 
 ## Recursion Test:
 def call_me(n):
