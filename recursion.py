@@ -51,6 +51,13 @@ def gcd(m,n):
         return gcd(m%n,n)
     return gcd(n%m, m)
 
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibonacci(n-2)+fibonacci(n-1)
+
 
 ## Recursion Test:
 def call_me(n):
@@ -68,6 +75,7 @@ def factorial(n):
     print('n:',n)
     return n*factorial(n-1)
 
+## Recursive Fibonacci function:
 def fibonacci(n):
     if n==0:
         return 0
