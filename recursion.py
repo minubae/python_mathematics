@@ -30,10 +30,14 @@ def expansion(n,b):
     return lst
 
 ## Example 01
-# (Catalan Numbers) The Catalan numbers a sequence of integers defined inductively via C0=1 and Cn+1=2(2n+1)n+2Cn for integers n≥0. 
+# (Catalan Numbers) The Catalan numbers a sequence of integers defined inductively via C0=1 and Cn+1=(2(2n+1)/n+2)*Cn for integers n≥0. 
 # Define a recursive function catalan(n) which takes as input an integer i≥0 and returns the Catalan number Ci. 
 # (The Catalan numbers first appeared as an exercise in the page on Lists.)
-
+def catalan(n):
+    if n == 0:
+        return 1
+    return catalan(n+1)*(2*(2*n+1)/(n+2))
+    
 ## Example 02
 # (Greatest common divisor) Write a recursive function gcd(m,n) which returns the greatest common divisor of 
 # integers m≥0 and n≥0 (not both zero). Use the following observations:
@@ -63,12 +67,6 @@ def fibonacci(n):
     elif n==1:
         return 1
     return fibonacci(n-2)+fibonacci(n-1)
-
-
-
-
-
-
 
 
 ## Problem 01:
