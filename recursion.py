@@ -356,9 +356,9 @@ def divisors(n):
 # Here f should be a function which takes as input an integer and produces a number, and N
 # should be an integer bigger than zero. Note that sum_sequence(f,0) should always return zero.
 def sum_sequence(f,N):
-	if N==0:
-		return 0
-	return sum_sequence(f,N-1)+f(N-1)
+    if N==0:
+        return 0
+    return sum_sequence(f,N-1)+f(N-1)
 
 
 
