@@ -341,11 +341,24 @@ def cantors_set_contains3(n, x):
     else:
         return 'n is not greater than equal to 0.'
 
-
-
-
-
-
+## Example:
+# A divisor of an integer n, is an integer d so that d divides n, i.e., so that n/d ∈ Z.
+# Write a function divisors(n) which takes as input an integer n is not equal to 0 and
+# returns the set of positive divisors of n.
+def divisors(n):
+    temp=set()
+    for i in range(1,abs(n)+1):
+    	if n%i==0:
+    		temp.add(i)
+    return sorted(temp)
+    
+# Write a recursive function sum_sequence(f,N) which returns the sum of f(n) from n=0 to N-1.
+# Here f should be a function which takes as input an integer and produces a number, and N
+# should be an integer bigger than zero. Note that sum_sequence(f,0) should always return zero.
+def sum_sequence(f,N):
+	if N==0:
+		return 0
+	return sum_sequence(f,N-1)+f(N-1)
 
 
 
