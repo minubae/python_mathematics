@@ -1,4 +1,4 @@
-# Programming Mathematics with Python
+# Mathematical Algorithms with Python
 
 ### 1. Basic
 - Find Divisors of a Natural Number P
