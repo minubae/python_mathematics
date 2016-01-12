@@ -91,6 +91,62 @@ def area(a, b, c):
         s = (a+b+c)/2
         return math.sqrt(s*(s-a)*(s-b)*(s-c))
 
+# 07) Check that a Natural Number p is a Prime Number
+# An integer p >= 2 is prime if the only positive numbers which divide it
+# evenly are itself and one. 
+# Write a funuction is_prime(p) which takes as input an integer p >= 2 and
+# returns True if p is prime and False if p is not prime.
+# Hints: The number p is not prime if and only if there ia n with 2 <= n < p
+# so that the remainder when dividing p by n is zero.
+def is_prime(p):
+    if p < 2:
+        return False
+    else:
+        for i in range(2,p-1):
+            if p%i == 0:
+                return False
+            else:
+                return True
+
+# 08) A Root finding Algorithm with the Newton's Method
+# Newton's method is a very efficient way to find a root of a differentiable 
+# function f starting with a point near the root. The method gives a sequence
+# x0, x1, x2,... of numbers which rapidly approach the root if the initial
+# point is sufficiently close to the root. The value x0 is the starting point. 
+# Given xk the value of xk+1 by intersecting the x-axis with tangent line to 
+# the graph of f at the point (xk, f(fk)). That is, 
+# xk+1 = xk - f(xk)/f'(xk).
+# An illustration of this process is shown at the end of this question. 
+# Write a function newtons_method(f, df, x0, n) which takes as input a function
+# f:R ---> R, its derivative df = f' (alse a function from R to R), an initial
+# point x0 and an integer n >= 1. The function should return the value xn obtained
+# by iterating Newton's method n times.
+
+def f(x):
+    return 2-x**2
+
+def df(x):
+    return -2*x
+
+# Using while_statement
+def newtons_method(f, df, x0, n):
+    i = 1
+    while i <= n:
+        if df(x0) == 0:
+            return x0
+        x = x0 - f(x0)/df(x0)
+        x0 = x
+        i+=1
+    return x
+
+# Using for_statement
+def newtons_method_01(f, df, x0, n):
+    for i in range(1, n+1):
+        if df(x0) == 0:
+            return x0
+        x = x0 - f(x0)/df(x0)
+        x0 = x
+    return x
 
 ## An approximation to a definite integral
 # An approximation to a definite integral of a real valued function is
