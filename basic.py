@@ -148,32 +148,51 @@ def newtons_method_01(f, df, x0, n):
         x0 = x
     return x
 
-## An approximation to a definite integral
+# 09) Collatz Conjecture
+# The Collatz conjecture can be summarized as follows. Take any natural number  n .
+# If n is even, divide it by 2 to get  n2 . If n is odd, multiply it by 3 and add 1 to obtain  3n+1 .
+# Repeat the process (which has been called "Half Or Triple Plus One", or HOTPO[6]) indefinitely.
+# The conjecture is that no matter what number you start with, you will always eventually reach 1.
+# The property has also been called oneness. In modular arithmetic notation, define the function f as follows:
+# f(n) = n/2 if n%2==0, 3*n+1 if n%2==1
+def collatz(n):
+    temp = list()
+    while n!=1:
+        if n%2==0:        
+            n = n//2
+            temp.append(n) 
+        else:
+            n = 3*n+1
+            temp.append(n) 
+
+    return temp
+
+# 10) An approximation to a definite integral
 # An approximation to a definite integral of a real valued function is
 # ∫ from a to b f(x)dx ≈ (b−a)/n * ∑ from i=0 to n−1 f(a + i(b−a)/n)
 # for large values of n. Here is a function which evaluates 
 # this sum on an arbitrary function.
+
+# Using while_statement
 def approximate_integral(f, a, b, n):
-	step_size = (b-a)/n
-	i = 0
-	sum = 0
-	while i<n:
-		sum = sum + f(a+i*(b-a)/n)
-		i += 1
-	return sum * (b-a) / n
+    h = (b-a)/n
+    i = 0
+    sum = 0
+    while i<n:
+        sum = sum + f(a+i*(b-a)/n)
+        i += 1
+    return sum * (b-a) / n
+
+# Using for_statement
+def approximate_integral_01(f, a, b, n):
+    h = (b-a)/n
+    sum = 0
+    for i in range(n):
+        sum = sum + f(a+i*(b-a)/n)
+    return sum * (b-a) / n
 
 
-# Collatz Conjecture
-# f(n) = n/2 if n%2==0, 3*n+1 if n%2==1
-def collatz(n):
-        temp = []
-        while n != 1:
-                if n%2 == 0:
-                        n = n // 2
-                elif n%2 == 1:
-                        n = 3*n+1
-                temp.append(n)
-        return temp
+
 
 
 
