@@ -1,6 +1,8 @@
 # Programming Mathematics with Python
 
 ### 1. Basic
+- 1)
+- 2)
 
 ### 2. Logic
 
@@ -8,4 +10,4 @@
 
 ### 4. Lists
 
-### 4. Recursion
+### 5. Recursion
