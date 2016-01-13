@@ -1,5 +1,5 @@
-# Title: Examples of Mathematics Logic and Set in Python
-# Date: Oct/27/2015, Tuesday - 
+# Title: Mathematical Algorithms - Recursion in Python
+# Date: Oct/27/2015, Tuesday - Current
 # Author: Minwoo Bae (minubae.nyc@gmail.com)
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Recursion.html
 
@@ -377,20 +377,3 @@ def fibonacci_m(n):
     if not n in memo:
         memo[n] = fibonacci_m(n-1) + fibonacci_m(n-2)
     return memo[n]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,5 @@
-# Title: Examples of Mathematics List in Python
-# Date: Nov/02/2015, Monday - 
+# Title: Mathematical Algorithms - List in Python
+# Date: Nov/02/2015, Monday - Current
 # Author: Minwoo Bae (minubae.nyc@gmail.com)
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Lists.html
 

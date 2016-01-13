@@ -274,11 +274,6 @@ def center_coord(p1, p2, p3, p4):
         return coord
 
 
-
-
-
-
-    
 ## Example
 # For sets of numbers A and B, let A⊕B denote their sumset as defined two problems above. 
 # For n ∈ ℕ, let An be as in the previous problem. Use the functions defined in the two prior problems to 
