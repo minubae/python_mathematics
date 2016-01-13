@@ -361,7 +361,22 @@ def sum_sequence(f,N):
     return sum_sequence(f,N-1)+f(N-1)
 
 
+## Fibonacci Numbers)
+## Recursive Approach: takes lots of time to solve it
+def fibonacci_r(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci_r(n-1) + fibonacci_r(n-2)
 
+## Memoization Approach:       
+def fibonacci_m(n):
+    memo = {0:0, 1:1}
+    if not n in memo:
+        memo[n] = fibonacci_m(n-1) + fibonacci_m(n-2)
+    return memo[n]
 
 
 

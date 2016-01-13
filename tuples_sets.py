@@ -10,9 +10,9 @@ numbers = list(range(1,11))
 square = lambda x: x**2
 square_list = list(map(square, numbers))
 
-#############################################################################
+##########################################################################################################
 ###********************************************** Tuples **********************************************###
-#############################################################################
+##########################################################################################################
 #  01) Baricenter
 # The baricenter of a triangle is the average of its coordinates. The following computes the baricenter of a triangle
 # (given as a 3-tuple of vertices). This point is always inside the triangle.
@@ -57,9 +57,9 @@ def planar_distance(p,q):
     return math.sqrt((x2-x1)**2 + (y2-y1)**2)
 
 
-###########################################################################
-###********************************************** Sets **********************************************###
-###########################################################################
+##########################################################################################################
+####********************************************** Sets **********************************************####
+##########################################################################################################
 
 # 01) The Union of a Collection of Sets
 # In set theory, the union (denoted by  ∪∪ ) of a collection of sets is the set of all distinct elements in the collection.
@@ -308,39 +308,3 @@ def verify_star(A, B, C):
 def is_nearly_equilateral(P,Q,R,epsilon):
     result = False
     return result
-
-
-
-
-
-
-
-
-
-
-## Example 11 (Fibonacci Numbers):
-# F(n) = F(n-1)+F(n-2), n>=3, F(0)=0, F(1)=1
-## Iteration Approach: Very Fast
-# To calculate the nth Fibonacci number in only n steps,
-# we can also start with 0 and 1 and iteratively add up items n times:
-def fibonacci(n):
-    a, b = 0, 1
-    while b < n:
-        print(b, end=',')
-        a, b = b, a+b
-
-## Recursive Approach: takes lots of time to solve it
-def fibonacci_r(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fibonacci_r(n-1) + fibonacci_r(n-2)
-
-## Memoization Approach:       
-def fibonacci_m(n):
-    memo = {0:0, 1:1}
-    if not n in memo:
-        memo[n] = fibonacci_m(n-1) + fibonacci_m(n-2)
-    return memo[n]

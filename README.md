@@ -22,6 +22,26 @@
 - Logical Equivalence
 
 ### 3. Tuples and Sets
+#### Tuples
+- Baricenter
+- The Fibonacci Numbers using pairs (a tuple)
+- Average of Numbers in a tuple
+- Concatenation of tuples
+- The Distance between two Points in the Plane
+
+#### Sets
+- The Union of a Colletion of Sets
+- The Intersection of a Collection of Sets
+- A Subset
+- Sumset of two Sets of Numbers
+- Find a Set of Divisors of a Integer Number n
+- The Greatest Common Divisor of two Natural Numbers a and b
+- The Sum of Squares
+- The Cartesian Product
+- Find a Maximum element of a Set
+- Find a Set of Squares
+- The Lagrange's four-square theorem
+- Check a Rectangle is a Square
 
 ### 4. Lists
 
