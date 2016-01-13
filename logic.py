@@ -1,4 +1,4 @@
-# Title: Mathematical Algorithms Logic in Python
+# Title: Mathematical Algorithms - Logic in Python
 # Date: Oct/27/2015, Tuesday - Current
 # Author: Minwoo Bae (minubae.nyc@gmail.com)
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Logic.html
