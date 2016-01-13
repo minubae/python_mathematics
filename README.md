@@ -13,6 +13,13 @@
 - Approximate a definite integral of a real valued function
 
 ### 2. Logic
+- The Truth Table
+- The Disjunction
+- The Conjunction
+- The Exclusive Or
+- The Implication
+- The Biconditional
+- Logical Equivalence
 
 ### 3. Tuples and Sets
 
