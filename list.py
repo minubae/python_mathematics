@@ -145,13 +145,3 @@ def multiply_polynomials(c1,c2):
 # For example, perimeter([(0,0),(3,0),(0,4)]) should return 12 (which is 3+4+5).
 def perimeter(p):
 	return 1
-
-
-        
-
-
-
-
-
-
-
