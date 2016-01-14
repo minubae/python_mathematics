@@ -3,39 +3,32 @@
 # Author: Minwoo Bae (minubae.nyc@gmail.com)
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Lists.html
 
+# 01) List of Fibonnacci Numbers
+# Suppose we want to create a function which lists the first n≥2n≥2 Fibonnacci numbers starting at (1,1). The following does this:
 def fibonacci_list(n):
     flist = [1,1]
     while len(flist)<n:
         flist.append(flist[len(flist)-1]+flist[len(flist)-2])
     return flist
 
-    
-## Example 01
-# A list is a palindrome if it is the same when reversed. Write a function is_palindrome(lst) which takes as input a list lst and 
-# returns the truth value of the statement "lst is a palindrome."
-def is_palindrome(lst):
-	return 1
-## Example 02
-# Write a function derivative(c) which takes as input a list c coefficients of a polynomial and returns the coefficient list of 
-# the derivative of the polynomial.
-def derivative(c):
-	return 1
+# 02) The Sieve of Eratosthenes
+def list_of_primes(n):
+    """returns a list of primes $p$ with 2<=p<n."""
+    lst = list(range(2,n))
+    print("Initially lst is ", lst, sep="")
+    primes = []
+    while len(lst) > 0:
+        p = lst.pop(0)
+        primes.append(p)
+        temporary_list = []
+        for x in lst:
+            if x%p != 0:
+                temporary_list.append(x)
+        lst=temporary_list
+        print("We found the prime ", p, ". At this point our lst is ", lst, sep="")
+    return primes
 
-## Example 03
-# Write a function multiply_polynomials(c1,c2) which takes as input two lists of coefficients of two polynomials and 
-# returns the coefficient list of the product of these polynomials.
-def multiply_polynomials(c1,c2):
-	return 1
-
-## Example 04
-# A polygon in the plane can be stored as a list of coordinates of vertices, where each vertex is a pair of numbers. 
-# For instance [(0,0),(3,0),(0,4)] represents a 3-4-5 right triangle.
-# Write a function perimeter(p) which computes the perimeter of the polygon p, where p is represented as a list of coordinates as above. 
-# For example, perimeter([(0,0),(3,0),(0,4)]) should return 12 (which is 3+4+5).
-def perimeter(p):
-	return 1
-
-## Problem 01:
+# 03) The Tribonacci Sequence
 # The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1, and a_{n+3} = a_{n} + a_{n+1} + a_{n+2}
 # for integers n ≥ 0. (a_{n} = a_{n-3} + a_{n-2} + a_{n-1}) Write a function tribonacci(m) which takes as input an number m ≥ 1
 # and returns the list [a0, a1, a2, . . . , a_{k}] where ak is the largest number in the sequence with a_{k} < m.
@@ -63,42 +56,22 @@ def tribonacci(m):
         return temp
     else:
         return 'm is not greater than equal to 1'
-    
-# r_tribonacci(10)
-def r_tribonacci(n):
-    if n==0 or n==1:
-        return 0
-    elif n==2:
-        return 1
-    return r_tribonacci(n-3) + r_tribonacci(n-2) + r_tribonacci(n-1)
 
-def tribonacci2(m):
-    # TODO:
-    # It neens to be fixed when m=1.
-    # Which should return a_{0} = 0 and a_{1} = 0 < 1, where a_{k} < m
-    
-    a, b, c = 0, 0, 1; temp=list()
-    temp.append(a); temp.append(b); temp.append(c)
-    i = 1
-    while i <= m:
-        a, b, c = b, c, a + b + c
-        if c < m:
-            temp.append(c)
-        if c >= m:
-            temp.remove(c)
-        i+=1
-    return temp
+def tribonacci_01(m):
+    l=[]
+    if (m>0):
+        l.append(0)
+        l.append(0)
+    if (m>1):
+        l.append(1)
+        last=1
+    while last<m:
+        last = l[len(l)-1]+l[len(l)-2]+l[len(l)-3]
+        if last<m:
+            l.append(last)
+    return l
 
-def fibonacci(n):
-    a, b = 0, 1
-    temp=list()
-    while b < n:
-        # print(b, end=',')
-        a, b = b, a+b
-        temp.append(b)
-    return temp
-        
-## Problem 02:
+# 04) The Catalan Numbers
 # Viewing addition as a binary operation, the Catalan number Ck is the number of ways to write k+1 as a sum of k+1 ones.
 # Here k≥0 is an integer. For example C0=1 because 1 can only be expressed as 1, and C1=1 because 2=1+1 is
 # the only way to write 2 as a sum of ones. But, C2=2 because 3=(1+1)+1=1+(1+1), and C3=5
@@ -117,39 +90,65 @@ def fibonacci(n):
 # first few Catalan numbers for n=1, 2, ... are 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, ...
 # Examples:
 # catalan_numbers(10) >>> [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
-def binominal_coefficient(n,k):
-    res = 1
-    if k > (n - k):
-        k = n - k
-    for i in range(k):
-        res = res * (n - i)
-        res = res // (i + 1)
-    return res
-
-def factorial(n):
-    i = 1
-    fact = 1
-    if n == 0 or n == 1:
-        return 1
-    while i <= n:
-        fact = fact*i
-        i += 1
-    return fact
-
 def catalan_numbers(n):
-    temp=list()
-    C = 0
-    for i in range(n):
-        C = factorial(2*i) // (factorial(i+1)*factorial(i))
-        temp.append(C)
-    return temp
+    def factorial(n):
+        i = 1; fact = 1
+        if n == 0 or n == 1:
+            return 1
+        while i <= n:
+            fact = fact*i
+            i += 1
+        return fact
+    temp=list(); C = 0
+    try:
+        for i in range(n):
+            C = factorial(2*i) // (factorial(i+1)*factorial(i))
+            temp.append(C)
+        return temp
+    except Exception as error:
+        return error
 
-def catalan_numbers2(n):
-    temp=list()
-    for i in range (n):
-        c = binominal_coefficient(2*i, i)
-        temp.append(c // (i+1))
-    return temp
+def catalan_numbers_01(n):
+    if n<1:
+        return []
+    c=[1]
+    for k in range(1,n):
+        sum=0
+        for i in range(k):
+            sum = sum + c[i]*c[k-i-1]
+        c.append(sum)
+    return c
+
+
+# 05) A Palindrome
+# A list is a palindrome if it is the same when reversed. Write a function is_palindrome(lst) which takes as input a list lst and 
+# returns the truth value of the statement "lst is a palindrome."
+def is_palindrome(lst):
+	return 1
+
+# 06) The Coefficient List of the Derivative of the Polynomial
+# Write a function derivative(c) which takes as input a list c coefficients of a polynomial and returns the coefficient list of 
+# the derivative of the polynomial.
+def derivative(c):
+	return 1
+
+# 07) The Coefficient List of the Product of these Polynomials
+# Write a function multiply_polynomials(c1,c2) which takes as input two lists of coefficients of two polynomials and 
+# returns the coefficient list of the product of these polynomials.
+def multiply_polynomials(c1,c2):
+	return 1
+
+# 08) The Perimeter
+# A polygon in the plane can be stored as a list of coordinates of vertices, where each vertex is a pair of numbers. 
+# For instance [(0,0),(3,0),(0,4)] represents a 3-4-5 right triangle.
+# Write a function perimeter(p) which computes the perimeter of the polygon p, where p is represented as a list of coordinates as above. 
+# For example, perimeter([(0,0),(3,0),(0,4)]) should return 12 (which is 3+4+5).
+def perimeter(p):
+	return 1
+
+
+        
+
 
 
 

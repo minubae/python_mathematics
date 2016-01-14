@@ -44,5 +44,23 @@
 - Check a Rectangle is a Square
 
 ### 4. Lists
+- List of Fibonnacci Numbers
+- The Sieve of Eratosthenes
+- The Tribonacci Sequence
+- The Catalan Numbers
+- A Palindrome
+- The Coefficient List of the Derivative of the Polynomial
+- The Coefficient List of the Product of these Polynomials
+- The Perimeter
 
 ### 5. Recursion
+
+
+
+
+
+
+
+
+
+
