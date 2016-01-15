@@ -49,13 +49,6 @@ def factorial_02(n):
                 fact = fact*i
         return fact
 
-# Using recursion
-def factorial_03(n):
-        if n==0 or n==1:
-                return 1
-        fact = factorial_03(n-1)*n
-        return fact
-
 # 03) Is_Square(n), n is a Non-negative Integer Number
 # Write a Python function called is_square(n) which takes as input an integer n
 # and returns truth-value of the statement "There is an integer k so that n = k^2".

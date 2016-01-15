@@ -4,6 +4,22 @@
 # Reference: http://wphooper.com/teaching/2015-fall-308/python/Recursion.html
 
 import math
+
+## From Examples:
+def factorial(n):
+    if n==0:
+        return 1
+    print('n:',n)
+    return n*factorial(n-1)
+# Using recursion
+def factorial_03(n):
+        if n==0 or n==1:
+                return 1
+        fact = factorial_03(n-1)*n
+        return fact
+
+
+        
 ## Pascal's triangle:
 # Consider a polynomial p(t)=aktk+ak−1tk−1+…+a1t+a0. Observe that
 # (t+1)p(t)=aktk+1+(ak+ak−1)tk+(ak−1+ak−2)tk−1+…+(a0+a1)t+a0.
@@ -69,12 +85,7 @@ def call_me(n):
         call_me(n-1)
     #print("Exiting call of function with n=", n)
 
-## From Examples:
-def factorial(n):
-    if n==0:
-        return 1
-    print('n:',n)
-    return n*factorial(n-1)
+
 
 ## Problem 01:
 # The tribonacci sequence is a sequence of integers defined inductively by a0 = a1 = 0, a2 = 1, and a_{n+3} = a_{n} + a_{n+1} + a_{n+2}
