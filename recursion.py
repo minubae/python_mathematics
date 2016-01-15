@@ -352,6 +352,29 @@ def cantors_set_contains3(n, x):
     else:
         return 'n is not greater than equal to 0.'
 
+# Solution from Professor Hooper
+def cantors_set_contains(n,x):
+	if x < 0:
+		return False
+
+	if x <= 1:
+		# Here we know that x lies in [0,1]
+		if n==0:
+			return True
+
+		if x <= 1/3:
+			# Here we know x lies in [0,1/3].
+			return cantors_set_contains(n-1, 3*x)
+
+		if x < 2/3:
+			# Here we know x lies in (1/3, 2/3) and n>1.
+			return False
+
+		# Here we know x lies in [2/3, 1].
+		return cantors_set_contains(n-1, 3*x-2)
+	# Here we know x>1.
+	return False
+
 ## Example:
 # A divisor of an integer n, is an integer d so that d divides n, i.e., so that n/d ∈ Z.
 # Write a function divisors(n) which takes as input an integer n is not equal to 0 and
