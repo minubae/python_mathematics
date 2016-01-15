@@ -54,13 +54,12 @@
 - The Perimeter
 
 ### 5. Recursion
-
-
-
-
-
-
-
-
-
-
+- Factorial by using Recursion
+- Pascal's Triangle
+- Expansion of a number in base b
+- Towers of Hanoi
+- The Catalan Numbers
+- Multiplication using Addition
+- Greatest Common Divisor by using Resursion
+- Iteration of a Function
+- The Cantor Set
