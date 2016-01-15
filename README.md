@@ -1,6 +1,6 @@
 # Mathematical Algorithms with Python
 
-### 1. Basic
+### 1. Numbers
 - Find Divisors of a Natural Number P
 - Find a Factorial of a Non-negative Integer N
 - Is_Square(n), n is a Non-negative Integer Number
