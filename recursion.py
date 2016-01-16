@@ -5,7 +5,6 @@
 
 import math
 
-
 # 01) Factorial by Recursion
 def factorial(n):
     if n==0:
@@ -16,8 +15,7 @@ def factorial_01(n):
 	if n==0 or n==1:
 	   	return 1
 	return factorial_01(n-1)*n
-        
-       
+               
 # 02) Pascal's triangle
 # Consider a polynomial p(t)=aktk+ak−1tk−1+…+a1t+a0. Observe that
 # (t+1)p(t)=aktk+1+(ak+ak−1)tk+(ak−1+ak−2)tk−1+…+(a0+a1)t+a0.
@@ -57,7 +55,6 @@ def catalan(n):
         return 1
     return catalan(n-1)*(2*(2*n+1)/(n+2))
     
-
 # 06) Multiplication using Addition
 # Write a recursive function multiply(m,n) which takes as input two integers m and n, and
 # returns their product m ∗ n only using addition and subtraction.
@@ -76,7 +73,6 @@ def multiply(m,n):
     except Exception as error:
         return error
 
-
 # 07) Greatest Common Divisor
 # Write a recursive function gcd(m,n) which returns the greatest common divisor of 
 # integers m≥0 and n≥0 (not both zero). Use the following observations:
@@ -89,7 +85,6 @@ def gcd(m,n):
     elif m>n:
         return gcd(m%n,n)
     return gcd(n%m, m)
-
 
 # 08) Iteration of a Function
 # Suppose f:ℝ→ℝ. Then, we define f^{∘k} to be f applied k∈ℕ times:
@@ -199,7 +194,6 @@ def sum_sequence(f,N):
     if N==0:
         return 0
     return sum_sequence(f,N-1)+f(N-1)
-
 
 # 11) The Fibonacci Sequence with Recursion
 def fibonacci(n):
