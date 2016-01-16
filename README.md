@@ -63,3 +63,5 @@
 - Greatest Common Divisor by using Resursion
 - Iteration of a Function
 - The Cantor Set
+- The Sum of Sequence
+- The Fibonacci Sequence with Recursion
