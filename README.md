@@ -1,5 +1,5 @@
 # Mathematical Algorithms with Python
-<p>Link: <a href="http://www.minubae.com/bridge-to-advanced-mathematics/numbers">
+<p>Link: <a href="http://www.minubae.com/bridge-to-advanced-mathematics/numbers" target="_blank">
 Mathematical Algorithms with Python
 </a></p>
 ### 1. Numbers
