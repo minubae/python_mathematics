@@ -1,5 +1,7 @@
 # Mathematical Algorithms with Python
-
+<p>Link: <a href="http://www.minubae.com/bridge-to-advanced-mathematics/numbers">
+Mathematical Algorithms with Python
+</a></p>
 ### 1. Numbers
 - Find Divisors of a Natural Number P
 - Find a Factorial of a Non-negative Integer N
