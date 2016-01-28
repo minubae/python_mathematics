@@ -1,6 +1,6 @@
 # Mathematical Algorithms with Python
 <p>Link: <a href="http://www.minubae.com/bridge-to-advanced-mathematics/numbers" target="_blank">
-<b>Site for the Documentation of Mathematical Algorithms</b>
+<b>Documentation of Mathematical Algorithms</b>
 </a></p>
 ### 1. Numbers
 - Find Divisors of a Natural Number P
